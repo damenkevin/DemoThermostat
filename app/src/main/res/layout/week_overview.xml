@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:background="#000000"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent">
 
     <Button
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 1"
-        android:layout_gravity="center_horizontal" />
+        android:text="Monday"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Tuesday"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"/>
 
     <Button
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 2"
-        android:layout_gravity="center_horizontal" />
+        android:text="Wednesday"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"/>
     <Button
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 3"
-        android:layout_gravity="center_horizontal" />
+        android:text="Thursday"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"/>
     <Button
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 4"
-        android:layout_gravity="center_horizontal" />
+        android:text="Friday"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"/>
     <Button
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 5"
-        android:layout_gravity="center_horizontal" />
+        android:text="Saturday"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"/>
+
     <Button
+        android:id="@+id/button3"
         style="@style/button"
         android:layout_height="wrap_content"
-        android:text="Day 6"
-        android:layout_gravity="center_horizontal" />
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day 7"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:text="Sunday"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp" />
 </LinearLayout>

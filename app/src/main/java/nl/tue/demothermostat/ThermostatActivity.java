@@ -71,19 +71,24 @@ public class ThermostatActivity extends Activity {
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vtemp++;
-                atemp = vtemp+50;
-                temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
-                seekBar.setProgress(vtemp);
+                if(vtemp<250){
+                    vtemp++;
+                    atemp = vtemp+50;
+                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    seekBar.setProgress(vtemp);
+                }
             }
         });
         bMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vtemp--;
-                atemp = vtemp+50;
-                temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
-                seekBar.setProgress(vtemp);
+                if(vtemp>0){
+                    vtemp--;
+                    atemp = vtemp+50;
+                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    seekBar.setProgress(vtemp);
+                }
+
             }
         });
     }

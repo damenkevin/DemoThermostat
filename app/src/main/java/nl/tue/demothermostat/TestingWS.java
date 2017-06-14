@@ -92,7 +92,7 @@ public class TestingWS extends Activity {
                             WeekProgram wpg = HeatingSystem.getWeekProgram();
                             // Set the week program to default
                             wpg.setDefault();
-                            /*
+
                             wpg.data.get("Monday").set(5, new Switch("day", true, "07:30"));
                             wpg.data.get("Monday").set(1, new Switch("night", true, "08:30"));
                             wpg.data.get("Monday").set(6, new Switch("day", true, "18:00"));
@@ -100,7 +100,7 @@ public class TestingWS extends Activity {
                             wpg.data.get("Monday").set(8, new Switch("day", true, "18:00"));
                             boolean duplicates = wpg.duplicates(wpg.data.get("Monday"));
                             System.out.println("Duplicates found "+duplicates);
-                            */
+
                             //Upload the updated program
                             //HeatingSystem.setWeekProgram(wpg);
 
