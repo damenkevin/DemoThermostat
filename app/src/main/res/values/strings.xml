@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DemoThermostat</string>
+    <string name="title_activity_week_day">WeekDay</string>
 </resources>
