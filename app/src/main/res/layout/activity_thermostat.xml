@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff"
+    android:background="@color/orange_red"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="0dp"
@@ -20,57 +20,64 @@
         android:layout_centerHorizontal="true"
         android:text="Current Temperature"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#8DEEEE"
+        android:textColor="@color/white"
         android:textSize="30dp" />
 
-    <ImageView
-        android:id="@+id/bPlus"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:src="@drawable/add_button" />
+        android:layout_centerVertical="true">
 
-    <TextView
-        android:id="@+id/temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bPlus"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="21.0 &#x2103;"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#8DEEEE"
-        android:textSize="30dp" />
 
-    <ImageView
-        android:id="@+id/bMinus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/bPlus"
-        android:layout_below="@+id/temp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/minus_button" />
+        <ImageView
+            android:id="@+id/bPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_button"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bPlus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:text="21.0 &#x2103;"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="48dp" />
+
+        <ImageView
+            android:id="@+id/bMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/bPlus"
+            android:layout_below="@+id/temp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/minus_button" />
+
+    </RelativeLayout>
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/testing_ws"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="26dp"
         android:indeterminate="false"
         android:max="30"
         android:progressTint="#336699"
-        android:thumbTint="#336699" />
+        android:thumbTint="#336699"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/week_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bMinus"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="19dp"
@@ -91,7 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/orange_red"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/bottom_navigation_main" />
