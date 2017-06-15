@@ -16,6 +16,7 @@ public class ThermostatActivity extends Activity {
     int atemp = vtemp+50;
     TextView temp;
     SeekBar seekBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,5 +93,6 @@ public class ThermostatActivity extends Activity {
 
             }
         });
+
     }
 }
