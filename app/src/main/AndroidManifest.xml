@@ -19,11 +19,11 @@
         </activity>
         <activity
             android:name=".WeekOverview"
-            android:label="@string/app_name"
+            android:label="Thermostat"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".TestingWS"
-            android:label="@string/app_name"></activity>
+            android:label="Thermostat"></activity>
         <activity
             android:name=".WeekDay"
             android:label="@string/title_activity_week_day"
