@@ -102,13 +102,26 @@ public class ThermostatActivity extends Activity {
         bottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.
-                }
-
+                bottomBar(item.getItemId());
                 return true;
             }
         });
 
+    }
+
+    private void bottomBar(int id){
+        Intent intent = null;
+        switch(id){
+            case R.id.action_home:
+                intent = new Intent(this, HomeActivity.class);
+                ;
+            case R.id.action_heating:
+                intent = new Intent(this, ThermostatActivity.class);
+                ;
+            case R.id.action_schedule:
+                intent = new Intent(this, WeekOverview.class);
+                ;
+        }
+        startActivity(intent);
     }
 }

@@ -29,7 +29,7 @@
             android:label="@string/title_activity_week_day"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".OverviewActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_overview"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
