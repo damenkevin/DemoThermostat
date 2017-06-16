@@ -5,7 +5,7 @@
         android:id="@+id/action_favorites"
         android:enabled="true"
         android:icon="@drawable/heating"
-        android:title="Favorites"
+        android:title="Heating"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_schedules"

@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':seekarc', ':SeekArc_library', ':seekarc_library', ':seekarc', ':mylibrary', ':mylibrary', ':seekarc_library'
