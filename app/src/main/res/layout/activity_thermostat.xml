@@ -16,17 +16,18 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Current Temperature"
+        android:text="Thermostat"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/grey"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_above="@+id/week_overview"
+        android:layout_centerHorizontal="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:id="@+id/relativeLayout">
 
 
         <ImageView
@@ -59,7 +60,7 @@
             android:layout_below="@+id/temp"
             android:layout_marginTop="12dp"
             android:src="@drawable/minus_button"
-            android:tint="@color/grey"/>/>
+            android:tint="@color/grey" />
 
     </RelativeLayout>
 
@@ -68,32 +69,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="70dp"
         android:indeterminate="false"
         android:max="30"
         android:progressTint="#336699"
         android:thumbTint="#336699"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/relativeLayout"
         android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/week_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="19dp"
-        android:text="Week Overview" />
+        android:text="Week Overview"
+        android:layout_above="@+id/testing_ws"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/testing_ws"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/week_overview"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:text="Testing Web Service" />
+        android:text="Testing Web Service"
+        android:layout_marginBottom="27dp"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
