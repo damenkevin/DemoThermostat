@@ -99,6 +99,7 @@ public class ThermostatActivity extends Activity {
             }
         });
 
+        bottom = (BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
