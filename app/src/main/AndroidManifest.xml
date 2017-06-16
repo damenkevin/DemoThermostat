@@ -20,13 +20,17 @@
         <activity
             android:name=".WeekOverview"
             android:label="Thermostat"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TestingWS"
-            android:label="Thermostat"></activity>
+            android:label="Thermostat" />
         <activity
             android:name=".WeekDay"
             android:label="@string/title_activity_week_day"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".OverviewActivity"
+            android:label="@string/title_activity_overview"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
