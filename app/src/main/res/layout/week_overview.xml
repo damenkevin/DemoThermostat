@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/orange_red"
+    android:background="@color/off_white"
     android:layout_height="match_parent">
 
     <RelativeLayout
@@ -89,8 +89,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/orange_red"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/grey"
+        app:itemTextColor="@color/grey"
         app:menu="@menu/bottom_navigation_main" />
 </RelativeLayout>
