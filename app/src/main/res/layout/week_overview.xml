@@ -1,62 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#ffffff"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/orange_red"
     android:layout_height="match_parent">
 
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Monday"
-        android:layout_gravity="center_horizontal"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+        <Button
+            android:id="@+id/button1"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Monday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/button"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Tuesday"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/button2"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Tuesday"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button1"
+            android:layout_alignStart="@+id/button1" />
 
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Wednesday"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"/>
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Thursday"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"/>
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Friday"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"/>
-    <Button
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Saturday"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/button3"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button2"
+            android:layout_alignStart="@+id/button1" />
+        <Button
+            android:id="@+id/button4"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Thursday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button3"
+            android:layout_alignStart="@+id/button1" />
+        <Button
+            android:id="@+id/button5"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Friday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button4"
+            android:layout_alignStart="@+id/button1" />
+        <Button
+            android:id="@+id/button6"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Saturday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button5"
+            android:layout_alignStart="@+id/button1" />
 
-    <Button
-        android:id="@+id/button3"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Sunday"
+        <Button
+            android:id="@+id/button7"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sunday"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button6"
+            android:layout_alignStart="@+id/button1" />
+    </RelativeLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_margin="10dp" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/orange_red"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_navigation_main" />
+</RelativeLayout>
