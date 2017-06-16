@@ -9,7 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/SeekArc_library" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/mylibrary" />
+            <option value="$PROJECT_DIR$/seekarc" />
+            <option value="$PROJECT_DIR$/seekarc_library" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
