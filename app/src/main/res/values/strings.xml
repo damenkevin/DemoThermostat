@@ -2,4 +2,7 @@
     <string name="app_name">Thermostat</string>
     <string name="title_activity_week_day">WeekDay</string>
     <string name="title_activity_overview">OverviewActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

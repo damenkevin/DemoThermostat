@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="nl.tue.demothermostat.HomeActivity">
+    tools:context="nl.tue.demothermostat.HomeFragment">
 
     <FrameLayout
         android:id="@+id/frag_container"
@@ -17,13 +17,4 @@
 
     </FrameLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        design:itemBackground="@color/orange_red"
-        design:itemIconTint="@color/white"
-        design:itemTextColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        design:menu="@menu/bottom_navigation_main" />
 </LinearLayout>

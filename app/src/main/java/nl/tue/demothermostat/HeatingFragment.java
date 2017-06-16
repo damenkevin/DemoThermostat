@@ -1,12 +1,12 @@
 package nl.tue.demothermostat;
 
-
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,28 +16,31 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class ThermostatActivity extends Activity {
 
+public class HeatingFragment extends Fragment {
     int vtemp = 160;
     int atemp = vtemp+50;
-    TextView temp;
     SeekBar seekBar;
-    BottomNavigationView bottom;
+    TextView temp;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thermostat);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_thermostat, container, false);
+    }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-        ImageView bPlus = (ImageView)findViewById(R.id.bPlus);
+        ImageView bPlus = (ImageView)getView().findViewById(R.id.bPlus);
         bPlus.setImageResource(R.drawable.add_button);
 
 
-        ImageView bMinus = (ImageView)findViewById(R.id.bMinus);
-        temp = (TextView)findViewById(R.id.temp);
-        Button weekOverview = (Button)findViewById(R.id.week_overview);
+        ImageView bMinus = (ImageView)getView().findViewById(R.id.bMinus);
+        temp = (TextView)getView().findViewById(R.id.temp);
+        Button weekOverview = (Button)getView().findViewById(R.id.week_overview);
 
         weekOverview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +50,7 @@ public class ThermostatActivity extends Activity {
             }
         });
 
-        Button testingWS = (Button)findViewById(R.id.testing_ws);
+        Button testingWS = (Button)getView().findViewById(R.id.testing_ws);
 
         testingWS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +60,7 @@ public class ThermostatActivity extends Activity {
             }
         });
 
-        seekBar = (SeekBar)findViewById(R.id.seekBar);
+        seekBar = (SeekBar)getView().findViewById(R.id.seekBar);
         seekBar.setMax(250);
         seekBar.setProgress(vtemp);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -102,30 +105,10 @@ public class ThermostatActivity extends Activity {
             }
         });
 
-        bottom = (BottomNavigationView)findViewById(R.id.bottom_navigation);
-        bottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                bottomBar(item.getItemId());
-                return true;
-            }
-        });
+
+
 
     }
 
-    private void bottomBar(int id){
-        Intent intent = null;
-        switch(id){
-            case R.id.action_home:
-                intent = new Intent(this, HomeActivity.class);
-                ;
-            case R.id.action_heating:
-                intent = new Intent(this, ThermostatActivity.class);
-                ;
-            case R.id.action_schedule:
-                intent = new Intent(this, WeekOverview.class);
-                ;
-        }
-        startActivity(intent);
-    }
+
 }
