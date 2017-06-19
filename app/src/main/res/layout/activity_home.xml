@@ -13,8 +13,143 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#f1f1f1">
+        android:background="@color/off_white">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/nighttextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_alignStart="@+id/linearLayout2"
+                android:layout_marginBottom="58dp"
+                android:layout_marginStart="-1dp"
+                android:background="@android:color/transparent"
+                android:inputType="numberDecimal"
+                android:text="Night Temperature"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nighttemp"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="numberDecimal"
+                    android:text="16.0"
+                    android:textColor="@color/grey"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:id="@+id/celciusnight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="&#x2103;"
+                    android:textColor="@color/grey"
+                    android:textSize="40dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/daytextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout1"
+                android:layout_alignStart="@+id/linearLayout1"
+                android:layout_marginBottom="58dp"
+                android:layout_marginStart="-1dp"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="Day Temperature"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/daytemp"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="21.0"
+                    android:textColor="@color/grey"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:id="@+id/celciusday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="&#x2103;"
+                    android:textColor="@color/grey"
+                    android:textSize="40dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/currenttextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/linearLayout3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="Current Temperature"
+                android:textColor="@android:color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/celciuscurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="21.0&#x2103;"
+                    android:textColor="@color/grey"
+                    android:textSize="60dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
     </FrameLayout>
 
 </LinearLayout>
