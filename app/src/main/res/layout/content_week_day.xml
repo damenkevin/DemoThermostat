@@ -13,8 +13,9 @@
         android:background="@color/off_white">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout01"
             android:layout_width="match_parent"
-            android:layout_height="9000dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -194,6 +195,194 @@
 
                 <TextView
                     android:id="@+id/dayswitch5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/nightswitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="92dp"
+                android:background="@android:color/transparent"
+                android:text="Night Switches"
+                android:textColor="@android:color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/nrelativeLayout1"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nightswitch"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:elevation="2dp">
+
+                <Switch
+                    android:id="@+id/ntoggle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/nightswitch1"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/nightswitch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nrelativeLayout2"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nrelativeLayout1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/ntoggle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/nightswitch2"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/nightswitch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nrelativeLayout3"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nrelativeLayout2"
+                android:layout_centerHorizontal="true">
+
+                <Switch
+                    android:id="@+id/ntoggle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/nightswitch3"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/nightswitch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nrelativeLayout4"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/nrelativeLayout3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/ntoggle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/nightswitch4"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/nightswitch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/nrelativeLayout5"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/nrelativeLayout4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/ntoggle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/nightswitch5"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/nightswitch5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
