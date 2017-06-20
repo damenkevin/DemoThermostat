@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context="nl.tue.demothermostat.HomeFragment">
 
+
     <FrameLayout
         android:id="@+id/frag_container"
         android:layout_width="match_parent"
@@ -115,20 +116,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/currenttextview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/linearLayout3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="9dp"
-                android:background="@android:color/transparent"
-                android:inputType="number"
-                android:text="Current Temperature"
-                android:textColor="@android:color/black"
-                android:textSize="35dp"
-                android:textStyle="bold" />
-
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="wrap_content"
@@ -149,6 +136,19 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/currenttextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/linearLayout3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="Current Temperature"
+                android:textColor="@android:color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </FrameLayout>
 

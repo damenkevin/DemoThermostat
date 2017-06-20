@@ -2,7 +2,11 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material">
-        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
     </style>
 
     <style name="button">
@@ -11,7 +15,10 @@
         <item name="android:layout_width">70dp</item>
     </style>
 
-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
+    </style>
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
