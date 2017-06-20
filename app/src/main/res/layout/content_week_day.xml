@@ -1,16 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/off_white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/off_white">
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="9000dp"
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/dayswitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="92dp"
+                android:background="@android:color/transparent"
+                android:text="Day Switches"
+                android:textColor="@android:color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dayswitch"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:elevation="2dp">
+
+                <Switch
+                    android:id="@+id/toggle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/dayswitch1"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/dayswitch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/toggle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/dayswitch2"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/dayswitch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true">
+
+                <Switch
+                    android:id="@+id/toggle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_toEndOf="@+id/dayswitch3"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
+                    app:theme="@style/Color1SwitchStyle" />
+
+                <TextView
+                    android:id="@+id/dayswitch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="91dp"
+                    android:text="15:24"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

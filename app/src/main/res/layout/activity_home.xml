@@ -144,7 +144,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="9dp"
                 android:background="@android:color/transparent"
-                android:inputType="number"
                 android:text="Current Temperature"
                 android:textColor="@android:color/black"
                 android:textSize="35dp"
