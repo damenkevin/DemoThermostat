@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.app.Activity;
 
 public class WeekDay extends AppCompatActivity implements
         View.OnClickListener{
-    TextView dayswitch1;
+    TextView dayswitch1, dayswitch2, dayswitch3, dayswitch4, dayswitch5;
     TextView x;
     private int mDay, mHour, mMinute;
 
@@ -24,8 +25,14 @@ public class WeekDay extends AppCompatActivity implements
         setContentView(R.layout.activity_week_day);
         dayswitch1=(TextView) findViewById(R.id.dayswitch1);
         dayswitch1.setOnClickListener(this);
-
-
+        dayswitch2=(TextView) findViewById(R.id.dayswitch2);
+        dayswitch2.setOnClickListener(this);
+        dayswitch3=(TextView) findViewById(R.id.dayswitch3);
+        dayswitch3.setOnClickListener(this);
+        dayswitch4=(TextView) findViewById(R.id.dayswitch4);
+        dayswitch4.setOnClickListener(this);
+        dayswitch5=(TextView) findViewById(R.id.dayswitch5);
+        dayswitch5.setOnClickListener(this);
     }
 
     @Override
@@ -49,5 +56,7 @@ public class WeekDay extends AppCompatActivity implements
                 }, mHour, mMinute, true);
         timePickerDialog.show();
     }
+
+
 }
 
