@@ -26,12 +26,10 @@
             android:label="Thermostat" />
         <activity
             android:name=".WeekDay"
-            android:label="@string/title_activity_week_day"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:label="@string/title_activity_week_day" />
         <activity
             android:name=".ThermostatActivity"
-            android:label="Thermostat"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:label="Thermostat" />
     </application>
 
 </manifest>

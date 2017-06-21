@@ -14,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class HomeActivity extends FragmentActivity {
+public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottom;
     FragmentManager fm;
@@ -28,6 +28,7 @@ public class HomeActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
+
 
 
         fm = getSupportFragmentManager();
