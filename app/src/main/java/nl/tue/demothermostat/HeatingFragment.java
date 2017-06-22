@@ -22,7 +22,7 @@ public class HeatingFragment extends Fragment {
     int vtemp = 160;
     int atemp = vtemp+50;
     CircleSeekBar seekBar;
-    TextView temp;
+    TextView temp, test;
 
 
     @Override

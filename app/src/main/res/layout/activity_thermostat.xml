@@ -24,22 +24,32 @@
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/relativeLayout"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
+        <io.feeeei.circleseekbar.CircleSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            app:wheel_reached_color="@color/accent"
+            app:wheel_scroll_only_one_circle="true"
+            />
 
         <ImageView
             android:id="@+id/bPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add_button"
-            android:tint="@color/primary_text"
-            android:layout_marginTop="165dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="151dp"
+            android:src="@drawable/add_button"
+            android:tint="@color/primary_text" />
 
         <TextView
             android:id="@+id/temp"
@@ -47,8 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/bPlus"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
             android:layout_marginBottom="11dp"
+            android:layout_marginTop="11dp"
             android:text="21.0 &#x2103;"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="48dp" />
@@ -66,16 +76,6 @@
 
     </RelativeLayout>
 
-    <!--<SeekBar-->
-        <!--android:id="@+id/seekBar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:layout_marginTop="70dp"-->
-        <!--android:indeterminate="false"-->
-        <!--android:max="30"-->
-        <!--android:layout_below="@+id/relativeLayout"-->
-        <!--android:layout_alignParentStart="true" />-->
 
     <Button
         android:id="@+id/week_overview"
@@ -95,15 +95,6 @@
         android:layout_marginBottom="27dp"
         android:layout_above="@+id/relativeLayout"
         android:layout_centerHorizontal="true" />
-
-    <io.feeeei.circleseekbar.CircleSeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:wheel_max_process="30"
-        android:layout_marginTop="30dp"
-        />
-
 
 
 </RelativeLayout>
