@@ -2,27 +2,35 @@
 <resources>
 
     <declare-styleable name="CircularSeekBar">
-        <attr name="progress" format="integer"/>
-        <attr name="max" format="integer"/>
-        <attr name="move_outside_circle" format="boolean"/>
-        <attr name="maintain_equal_circle" format="boolean"/>
-        <attr name="use_custom_radii" format="boolean"/>
-        <attr name="lock_enabled" format="boolean"/>
-        <attr name="circle_x_radius" format="dimension" />
-        <attr name="circle_y_radius" format="dimension" />
-        <attr name="circle_stroke_width" format="dimension" />
-        <attr name="pointer_radius" format="dimension" />
-        <attr name="pointer_halo_width" format="dimension" />
-        <attr name="pointer_halo_border_width" format="dimension"/>
-        <attr name="circle_color" format="color"/>
-        <attr name="circle_progress_color" format="color"/>
-        <attr name="pointer_color" format="color"/>
-        <attr name="pointer_halo_color" format="color"/>
-        <attr name="pointer_halo_color_ontouch" format="color"/>
-        <attr name="pointer_alpha_ontouch" format="integer"/>
-        <attr name="start_angle" format="float"/>
-        <attr name="end_angle" format="float"/>
-        <attr name="circle_fill" format="color"/>
+        <attr name="wheel_max_process" format="integer" />
+        <attr name="wheel_cur_process" format="integer" />
+
+        <!-- reached style -->
+        <attr name="wheel_reached_color" format="color" />
+        <attr name="wheel_reached_width" format="dimension" />
+
+        <!-- unReached style -->
+        <attr name="wheel_unreached_color" format="color" />
+        <attr name="wheel_unreached_width" format="dimension" />
+
+        <!-- pointer style -->
+        <attr name="wheel_pointer_color" format="color" />
+        <attr name="wheel_pointer_radius" format="dimension" />
+
+        <!--shadows style -->
+        <attr name="wheel_has_pointer_shadow" format="boolean" />
+        <attr name="wheel_has_wheel_shadow" format="boolean" />
+        <attr name="wheel_pointer_shadow_radius" format="dimension" />
+        <attr name="wheel_shadow_radius" format="dimension" />
+
+        <!-- if you want to open the wheel shadow, open this can speed up the rendering speed -->
+        <attr name="wheel_has_cache" format="boolean" />
+
+        <!-- if you want to block touchListener,use like processBar,
+         only allow the code to control the schedule, you can change this attribute to false -->
+        <attr name="wheel_can_touch" format="boolean" />
+
+        <attr name="wheel_scroll_only_one_circle" format="boolean" />
     </declare-styleable>
 
 </resources>

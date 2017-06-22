@@ -15,12 +15,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import io.feeeei.circleseekbar.CircleSeekBar;
 
 
 public class HeatingFragment extends Fragment {
     int vtemp = 160;
     int atemp = vtemp+50;
-    SeekBar seekBar;
+    CircleSeekBar seekBar;
     TextView temp;
 
 
@@ -60,26 +61,17 @@ public class HeatingFragment extends Fragment {
             }
         });
 
-        seekBar = (SeekBar)getView().findViewById(R.id.seekBar);
-        seekBar.setMax(250);
-        seekBar.setProgress(vtemp);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        seekBar = (CircleSeekBar) getView().findViewById(R.id.seekBar);
+        seekBar.setMaxProcess(250);
+        seekBar.setCurProcess(vtemp);
+        seekBar.setOnSeekBarChangeListener(new CircleSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onChanged(CircleSeekBar seekBar, int i) {
                 vtemp = i;
                 atemp = i+50;
                 temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
             }
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
         });
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +80,7 @@ public class HeatingFragment extends Fragment {
                     vtemp++;
                     atemp = vtemp+50;
                     temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
-                    seekBar.setProgress(vtemp);
+                    seekBar.setCurProcess(vtemp);
                 }
             }
         });
@@ -99,7 +91,7 @@ public class HeatingFragment extends Fragment {
                     vtemp--;
                     atemp = vtemp+50;
                     temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
-                    seekBar.setProgress(vtemp);
+                    seekBar.setCurProcess(vtemp);
                 }
 
             }
