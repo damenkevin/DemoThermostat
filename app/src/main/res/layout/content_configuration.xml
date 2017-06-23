@@ -7,7 +7,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="nl.tue.demothermostat.ConfigurationActivity"
     tools:showIn="@layout/activity_configuration"
-    android:theme="@style/AppTheme">
+    android:theme="@style/AppTheme"
+    android:background="@drawable/gradient">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,7 +22,8 @@
         android:focusableInTouchMode="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/transparent">
 
         <TextView
             android:id="@+id/daytextview"
@@ -36,7 +38,8 @@
             android:text="Day Temperature"
             android:textColor="@android:color/black"
             android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textStyle="bold" 
+            />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -45,7 +48,8 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
 
             <EditText
                 android:id="@+id/daytemp"
@@ -54,7 +58,7 @@
                 android:background="@android:color/transparent"
                 android:inputType="number"
                 android:text="21.0"
-                android:textColor="@color/grey"
+                android:textColor="@color/primary_text"
                 android:textSize="40dp" />
 
             <TextView
@@ -64,7 +68,7 @@
                 android:background="@android:color/transparent"
                 android:inputType="number"
                 android:text="&#x2103;"
-                android:textColor="@color/grey"
+                android:textColor="@color/primary_text"
                 android:textSize="40dp" />
         </LinearLayout>
 
@@ -99,7 +103,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:layout_marginTop="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
 
             <EditText
                 android:id="@+id/nighttemp"
@@ -108,7 +113,7 @@
                 android:background="@android:color/transparent"
                 android:inputType="numberDecimal"
                 android:text="16.0"
-                android:textColor="@color/grey"
+                android:textColor="@color/primary_text"
                 android:textSize="40dp" />
 
             <TextView
@@ -118,7 +123,7 @@
                 android:background="@android:color/transparent"
                 android:inputType="number"
                 android:text="&#x2103;"
-                android:textColor="@color/grey"
+                android:textColor="@color/primary_text"
                 android:textSize="40dp" />
         </LinearLayout>
 

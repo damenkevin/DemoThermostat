@@ -15,12 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:background="@android:color/transparent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
