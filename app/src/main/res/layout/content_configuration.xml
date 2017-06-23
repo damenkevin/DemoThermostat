@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="nl.tue.demothermostat.ConfigurationActivity"
+    tools:showIn="@layout/activity_configuration"
+    android:theme="@style/AppTheme">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="495dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="7dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/daytextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout1"
+            android:layout_alignStart="@+id/linearLayout1"
+            android:layout_marginBottom="58dp"
+            android:layout_marginStart="-1dp"
+            android:background="@android:color/transparent"
+            android:inputType="number"
+            android:text="Day Temperature"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/daytemp"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="21.0"
+                android:textColor="@color/grey"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/celciusday"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="&#x2103;"
+                android:textColor="@color/grey"
+                android:textSize="40dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/daySet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/linearLayout1"
+            android:layout_below="@+id/daytextview"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="23dp"
+            android:text="Set" />
+
+        <TextView
+            android:id="@+id/nighttextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/daytextview"
+            android:layout_alignBottom="@+id/daytextview"
+            android:layout_alignStart="@+id/linearLayout2"
+            android:background="@android:color/transparent"
+            android:inputType="numberDecimal"
+            android:text="Night Temperature"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/nighttemp"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="numberDecimal"
+                android:text="16.0"
+                android:textColor="@color/grey"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/celciusnight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:text="&#x2103;"
+                android:textColor="@color/grey"
+                android:textSize="40dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nightSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/daySet"
+            android:layout_alignBottom="@+id/daySet"
+            android:layout_alignEnd="@+id/linearLayout2"
+            android:layout_marginEnd="7dp"
+            android:text="Set" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

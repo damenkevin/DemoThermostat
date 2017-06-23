@@ -392,6 +392,16 @@
                     android:textSize="25dp" />
 
             </RelativeLayout>
+
+            <TextView
+                android:id="@+id/selectedDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:text="Day"
+                android:textSize="24sp" />
         </RelativeLayout>
     </ScrollView>
 

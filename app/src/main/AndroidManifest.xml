@@ -6,12 +6,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        tools:replace="android:label"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Home"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:name="org.thermostatapp.util.GlobalResources"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +33,10 @@
         <activity
             android:name=".ThermostatActivity"
             android:label="Thermostat" />
+        <activity
+            android:name=".ConfigurationActivity"
+            android:label="@string/title_activity_configuration"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

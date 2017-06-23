@@ -1,20 +1,18 @@
 package nl.tue.demothermostat;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
+
+import org.thermostatapp.util.HeatingSystem;
+import org.thermostatapp.util.InvalidInputValueException;
+
 import io.feeeei.circleseekbar.CircleSeekBar;
 
 
@@ -28,7 +26,7 @@ public class HeatingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_thermostat, container, false);
+        return inflater.inflate(R.layout.fragment_heating, container, false);
     }
 
     @Override
@@ -41,25 +39,6 @@ public class HeatingFragment extends Fragment {
 
         ImageView bMinus = (ImageView)getView().findViewById(R.id.bMinus);
         temp = (TextView)getView().findViewById(R.id.temp);
-        Button weekOverview = (Button)getView().findViewById(R.id.week_overview);
-
-        weekOverview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), WeekOverview.class);
-                startActivity(intent);
-            }
-        });
-
-        Button testingWS = (Button)getView().findViewById(R.id.testing_ws);
-
-        testingWS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), TestingWS.class);
-                startActivity(intent);
-            }
-        });
 
         seekBar = (CircleSeekBar) getView().findViewById(R.id.seekBar);
         seekBar.setMaxProcess(250);
@@ -97,7 +76,22 @@ public class HeatingFragment extends Fragment {
             }
         });
 
-
+        Button setTemp = (Button)getView().findViewById(R.id.setTemp);
+        setTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            HeatingSystem.put("targetTemperature", "30");
+                        } catch (InvalidInputValueException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+            }
+        });
 
 
     }

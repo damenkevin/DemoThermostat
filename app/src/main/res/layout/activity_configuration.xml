@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nl.tue.demothermostat.WeekDay">
+    tools:context="nl.tue.demothermostat.ConfigurationActivity"
+    android:theme="@style/AppTheme">
 
-
-    <include layout="@layout/content_week_day" />
+    <include layout="@layout/content_configuration" />
 
 
 </android.support.design.widget.CoordinatorLayout>

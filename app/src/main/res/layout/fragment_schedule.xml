@@ -1,13 +1,122 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nl.tue.demothermostat.ScheduleFragment">
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/monday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Monday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/tuesday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Tuesday"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/monday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/wednesday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tuesday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"/>
+        <Button
+            android:id="@+id/thursday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Thursday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/wednesday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"/>
+        <Button
+            android:id="@+id/friday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Friday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/thursday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"/>
+        <Button
+            android:id="@+id/saturday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:text="Saturday"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/friday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/sunday"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sunday"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/saturday"
+            android:layout_alignStart="@+id/monday"
+            android:background="@color/white"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="3dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Week overview"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/configBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Configure" />
+
+</RelativeLayout>
