@@ -25,7 +25,7 @@
             android:background="@color/white"
             android:textColor="@color/dark_grey"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"/>
 
         <Button
             android:id="@+id/tuesday"
@@ -124,8 +124,8 @@
         android:background="@android:color/transparent"
         android:src="@drawable/settings"
         android:tint="@color/white"
+        android:layout_marginEnd="14dp"
         android:layout_alignBottom="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

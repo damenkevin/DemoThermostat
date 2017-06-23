@@ -17,6 +17,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="colorButtonNormal">@color/white</item>
     </style>
 
     <style name="button">

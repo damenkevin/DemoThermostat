@@ -31,10 +31,13 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:background="@android:color/transparent"
-            app:wheel_pointer_color="@color/grey"
-            app:wheel_reached_color="@color/accent"
+            app:wheel_pointer_color="@color/off_white"
+            app:wheel_reached_color="@color/white"
             app:wheel_scroll_only_one_circle="true"
-            app:wheel_unreached_color="@color/white" />
+            app:wheel_unreached_color="@color/transparentwhite"
+            app:wheel_pointer_radius="5dp"
+            app:wheel_unreached_width="5dp"
+            app:wheel_reached_width="5dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
