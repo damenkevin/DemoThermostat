@@ -11,7 +11,86 @@
     android:paddingTop="0dp"
     tools:context=".ThermostatActivity"
     android:theme="@style/AppTheme"
-    android:background="@color/white">
+    android:background="@drawable/gradient">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent">
+
+        <io.feeeei.circleseekbar.CircleSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@android:color/transparent"
+            app:wheel_pointer_color="@color/grey"
+            app:wheel_reached_color="@color/background"
+            app:wheel_scroll_only_one_circle="true"
+            app:wheel_unreached_color="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/bPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/add_button"
+                android:tint="@color/primary_text" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bPlus"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="11dp"
+                android:layout_marginTop="11dp"
+                android:background="@android:color/transparent"
+                android:text="21.0 &#x2103;"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/primary_text"
+                android:textSize="48dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/bMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/bPlus"
+                android:layout_below="@+id/temp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/minus_button"
+                android:tint="@color/primary_text" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/setTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:src="@drawable/checkmark"
+        android:tint="@color/primary_text"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -19,71 +98,12 @@
         android:layout_height="wrap_content"
         android:text="Thermostat"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30dp"
-        android:layout_above="@+id/week_overview"
-        android:layout_centerHorizontal="true" />
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <io.feeeei.circleseekbar.CircleSeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_centerVertical="true"
-            app:wheel_reached_color="@color/accent"
-            app:wheel_scroll_only_one_circle="true"
-            />
-
-        <ImageView
-            android:id="@+id/bPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="151dp"
-            android:src="@drawable/add_button"
-            android:tint="@color/primary_text" />
-
-        <TextView
-            android:id="@+id/temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bPlus"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="11dp"
-            android:layout_marginTop="11dp"
-            android:text="21.0 &#x2103;"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="48dp" />
-
-        <ImageView
-            android:id="@+id/bMinus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/bPlus"
-            android:layout_below="@+id/temp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/minus_button"
-            android:tint="@color/primary_text" />
-
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/setTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="39dp"
-        android:text="Set temp" />
+        android:textColor="@color/primary_text"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"/>
 
 
 </RelativeLayout>

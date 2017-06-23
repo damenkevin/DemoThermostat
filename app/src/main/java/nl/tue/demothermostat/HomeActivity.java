@@ -29,7 +29,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
 
-
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         fm = getSupportFragmentManager();
         fragmentTransaction = fm.beginTransaction();
@@ -45,6 +47,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void bottomBarNav(int id) {
         fm = getSupportFragmentManager();

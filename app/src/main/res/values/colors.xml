@@ -3,13 +3,22 @@
     <color name="primary">#f41111</color>
     <color name="primary_dark">#b71c1c</color>
     <color name="accent">#ffab40</color>
-    <!--<color name="primary_light">#ff5252</color>-->
-    <color name="primary_text">#000000</color>
+    <color name="primary_text">#ffffff</color>
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+    <color name="background">#090f33</color>
+    <color name="background_dark">#2f4467</color>
+    <color name="background_light">#f17662</color>
+    <color name="background_border">#000000</color>
+    <color name="dark_grey">#252525</color>
+    <color name="gradient_leftbottom">#FF5F6D</color>
+    <color name="gradient_righttop">#FFC371</color>
 
 
+
+
+    <color name="transparentwhite">#94ffffff</color>
     <color name="white">#FFFFFF</color>
     <!--<color name="orange_red">#F4511E</color>-->
     <color name="off_white">#F5F5F5</color>

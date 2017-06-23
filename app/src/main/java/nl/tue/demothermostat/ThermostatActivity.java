@@ -34,15 +34,7 @@ public class ThermostatActivity extends Activity {
 
         ImageView bMinus = (ImageView)findViewById(R.id.bMinus);
         temp = (TextView)findViewById(R.id.temp);
-        Button weekOverview = (Button)findViewById(R.id.week_overview);
 
-        weekOverview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), WeekOverview.class);
-                startActivity(intent);
-            }
-        });
 
         seekBar = (SeekBar)findViewById(R.id.seekBar);
         seekBar.setMax(250);

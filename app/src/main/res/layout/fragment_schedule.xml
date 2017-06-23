@@ -4,12 +4,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/gradient">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:id="@+id/relativeLayout7">
 
         <Button
             android:id="@+id/monday"
@@ -18,11 +20,11 @@
             android:text="Monday"
             android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_marginTop="2dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
             android:background="@color/white"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/dark_grey"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/tuesday"
@@ -35,7 +37,7 @@
             android:layout_below="@+id/monday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/dark_grey"/>
 
         <Button
             android:id="@+id/wednesday"
@@ -48,7 +50,7 @@
             android:layout_below="@+id/tuesday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/dark_grey"/>
         <Button
             android:id="@+id/thursday"
             style="@style/button"
@@ -60,7 +62,7 @@
             android:layout_below="@+id/wednesday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/dark_grey"/>
         <Button
             android:id="@+id/friday"
             style="@style/button"
@@ -72,7 +74,7 @@
             android:layout_below="@+id/thursday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/dark_grey"/>
         <Button
             android:id="@+id/saturday"
             style="@style/button"
@@ -84,7 +86,7 @@
             android:layout_below="@+id/friday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/dark_grey"/>
 
         <Button
             android:id="@+id/sunday"
@@ -97,7 +99,7 @@
             android:layout_below="@+id/saturday"
             android:layout_alignStart="@+id/monday"
             android:background="@color/white"
-            android:textColor="@android:color/black"
+            android:textColor="@color/dark_grey"
             android:layout_marginBottom="3dp"/>
     </RelativeLayout>
 
@@ -105,18 +107,24 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@android:color/transparent"
+        android:text="Week Overview"
+        android:textColor="@color/primary_text"
+        android:textSize="35dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Week overview"
-        android:textSize="24sp" />
+        android:layout_centerHorizontal="true" />
 
-    <Button
+    <ImageView
         android:id="@+id/configBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Configure" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Configure"
+        android:background="@android:color/transparent"
+        android:src="@drawable/settings"
+        android:tint="@color/white"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp" />
 
 </RelativeLayout>

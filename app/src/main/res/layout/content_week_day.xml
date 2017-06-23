@@ -10,13 +10,14 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/white">
+        android:background="@drawable/gradient">
 
         <RelativeLayout
             android:id="@+id/relativeLayout01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/dayswitch"
@@ -62,7 +63,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -97,7 +99,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -132,7 +135,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -167,7 +171,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
             <RelativeLayout
@@ -201,7 +206,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -249,7 +255,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -284,7 +291,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -319,7 +327,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -354,7 +363,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
             <RelativeLayout
@@ -389,7 +399,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
                     android:text="15:24"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:background="@android:color/transparent"/>
 
             </RelativeLayout>
 
@@ -399,9 +410,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="26dp"
                 android:text="Day"
-                android:textSize="24sp" />
+                android:textSize="35dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/primary_text"/>
         </RelativeLayout>
     </ScrollView>
 

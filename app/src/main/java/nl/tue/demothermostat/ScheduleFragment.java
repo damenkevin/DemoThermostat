@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class ScheduleFragment extends Fragment implements View.OnClickListener {
@@ -23,7 +24,7 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         Button friday = (Button) myFragmentView.findViewById(R.id.friday);
         Button saturday = (Button) myFragmentView.findViewById(R.id.saturday);
         Button sunday = (Button) myFragmentView.findViewById(R.id.sunday);
-        Button config = (Button) myFragmentView.findViewById(R.id.configBtn);
+        ImageView config = (ImageView) myFragmentView.findViewById(R.id.configBtn);
 
         monday.setOnClickListener(this);
         tuesday.setOnClickListener(this);
