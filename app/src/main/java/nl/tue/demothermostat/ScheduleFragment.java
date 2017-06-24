@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import org.thermostatapp.util.GlobalResources;
+import org.thermostatapp.util.HeatingSystem;
 import org.thermostatapp.util.Switch;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         Button friday = (Button) myFragmentView.findViewById(R.id.friday);
         Button saturday = (Button) myFragmentView.findViewById(R.id.saturday);
         Button sunday = (Button) myFragmentView.findViewById(R.id.sunday);
+        Button set = (Button) myFragmentView.findViewById(R.id.setProgram);
         ImageView config = (ImageView) myFragmentView.findViewById(R.id.configBtn);
 
         monday.setOnClickListener(this);
@@ -49,6 +51,19 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        HeatingSystem.setWeekProgram(((GlobalResources) getActivity().getApplication()).getLocalWeekProgram());
+                    }
+                }).start();
+
+            }
+        });
+
         return myFragmentView;
     }
 
@@ -56,6 +71,10 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+    }
+
+    private void setProgram() {
 
     }
 

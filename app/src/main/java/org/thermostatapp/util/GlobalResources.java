@@ -3,6 +3,7 @@ package org.thermostatapp.util;
 import android.app.Application;
 
 import java.net.ConnectException;
+import java.util.ArrayList;
 
 /**
  * Created by gsmet on 23-Jun-17.
@@ -33,7 +34,11 @@ public class GlobalResources extends Application {
         }).start();
     }
 
-    public WeekProgram getWeekProgram(){
+    public WeekProgram getLocalWeekProgram(){
+        return wpg;
+    }
+
+    public WeekProgram getWeekProgramFromServer(){
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -57,4 +62,9 @@ public class GlobalResources extends Application {
 
         return wpg;
     }
+
+    public void setDayProgram(ArrayList<Switch> s, String day){
+        wpg.data.put(day, s);
+    }
+
 }

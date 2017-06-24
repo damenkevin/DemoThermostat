@@ -13,7 +13,6 @@ import android.widget.TimePicker;
 import org.thermostatapp.util.GlobalResources;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class WeekDay extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -36,6 +35,13 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         mDay = extras.getInt("day");
 
         selectedDay = (TextView) findViewById(R.id.selectedDay);
+
+        findViewById(R.id.saveDay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveDayProgram();
+            }
+        });
 
         selectDay();
 
@@ -111,23 +117,23 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         nSwitch4.setOnCheckedChangeListener(this);
         nSwitch5.setOnCheckedChangeListener(this);
 
-        switches = ((GlobalResources) getApplication()).getWeekProgram().getDayProgram(mDay);
+        switches = ((GlobalResources) getApplication()).getLocalWeekProgram().getDayProgram(mDay);
         initializeSwitches();
     }
 
     private void initializeSwitches() {
         int i = 0;
         for (org.thermostatapp.util.Switch s : switches) {
-            if(!s.getState()) {
+            if (!s.getState()) {
                 i++;
                 continue;
             } else {
-                if(s.getType().equals("day")){
-                    daySwitches.get(i/2).setChecked(true);
-                    dayTimes.get(i/2).setText(s.getTime());
+                if (s.getType().equals("day")) {
+                    daySwitches.get(i / 2).setChecked(true);
+                    dayTimes.get(i / 2).setText(s.getTime());
                 } else {
-                    nightSwitches.get(i/2).setChecked(true);
-                    nightTimes.get(i/2).setText(s.getTime());
+                    nightSwitches.get(i / 2).setChecked(true);
+                    nightTimes.get(i / 2).setText(s.getTime());
                 }
                 i++;
             }
@@ -162,6 +168,35 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         }
     }
 
+    private void saveDayProgram() {
+        int i = 0, j = 0;
+        for (Switch s : daySwitches) {
+            switches.get(i).setType("day");
+            if (s.isChecked()) {
+                switches.get(i).setState(true);
+                switches.get(i).setTime(dayTimes.get(i).getText().toString());
+            } else {
+                switches.get(i).setState(false);
+            }
+            i++;
+        }
+
+        for (Switch s : nightSwitches) {
+            switches.get(i).setType("night");
+            if (s.isChecked()) {
+                switches.get(i).setState(true);
+                switches.get(i).setTime(nightTimes.get(j).getText().toString());
+            } else {
+                switches.get(i).setState(false);
+            }
+            i++;
+            j++;
+        }
+
+        ((GlobalResources) getApplication()).setDayProgram(switches, selectedDay.getText().toString().trim());
+
+        this.onBackPressed();
+    }
 
     @Override
     public void onClick(View v) {

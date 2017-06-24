@@ -415,6 +415,16 @@
                 android:textSize="35dp"
                 android:background="@android:color/transparent"
                 android:textColor="@color/primary_text"/>
+
+            <ImageView
+                android:id="@+id/saveDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/selectedDay"
+                android:layout_alignEnd="@+id/relativeLayout1"
+                android:layout_alignTop="@+id/selectedDay"
+                android:layout_toEndOf="@+id/nightswitch"
+                app:srcCompat="@android:drawable/ic_menu_save" />
         </RelativeLayout>
     </ScrollView>
 

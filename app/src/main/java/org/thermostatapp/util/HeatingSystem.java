@@ -151,7 +151,7 @@ public class HeatingSystem {
      *            "nightTemperature", "weekProgramState" }; Note that
      *            "weekProgram" has not been included, because it has a more
      *            complex value than a single value. Therefore the funciton
-     *            getWeekProgram() is implemented which return a WeekProgram
+     *            getWeekProgramFromServer() is implemented which return a WeekProgram
      *            object that can be easily altered.
      */
     public static String get(String attribute_name) throws ConnectException,
@@ -159,7 +159,7 @@ public class HeatingSystem {
         // If XML File does not contain the specified attribute, than
         // throw NotFound or NotFoundArgumentException
         // You can retrieve every attribute with a single value. But for the
-        // WeekProgram you need to call getWeekProgram().
+        // WeekProgram you need to call getWeekProgramFromServer().
         String link = "";
         boolean match = false;
         String[] valid_names = { "day", "time", "currentTemperature", "targetTemperature",
