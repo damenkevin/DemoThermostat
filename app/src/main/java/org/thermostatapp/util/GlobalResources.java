@@ -9,7 +9,7 @@ import java.net.ConnectException;
  */
 
 public class GlobalResources extends Application {
-    public WeekProgram wpg;
+    private WeekProgram wpg;
     public double dayTemp = 30.0, nightTemp = 5.0, overrideTemp, vacTemp;
 
     @Override
@@ -31,5 +31,30 @@ public class GlobalResources extends Application {
                 }
             }
         }).start();
+    }
+
+    public WeekProgram getWeekProgram(){
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    wpg = HeatingSystem.getWeekProgram();
+                } catch (ConnectException e) {
+                    e.printStackTrace();
+                } catch (CorruptWeekProgramException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        t.start();
+
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return wpg;
     }
 }

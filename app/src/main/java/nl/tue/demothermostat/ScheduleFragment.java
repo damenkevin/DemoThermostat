@@ -2,12 +2,20 @@ package nl.tue.demothermostat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import org.thermostatapp.util.GlobalResources;
+import org.thermostatapp.util.Switch;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ScheduleFragment extends Fragment implements View.OnClickListener {
@@ -42,6 +50,13 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         });
 
         return myFragmentView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
     }
 
     @Override

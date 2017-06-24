@@ -10,12 +10,20 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import org.thermostatapp.util.GlobalResources;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class WeekDay extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     TextView x, selectedDay;
     TextView dayswitch1, dayswitch2, dayswitch3, dayswitch4, dayswitch5, nightswitch1, nightswitch2, nightswitch3, nightswitch4, nightswitch5;
     Switch switch1, switch2, switch3, switch4, switch5, nSwitch1, nSwitch2, nSwitch3, nSwitch4, nSwitch5;
     private int mDay, mHour, mMinute;
+    ArrayList<org.thermostatapp.util.Switch> switches = new ArrayList<>();
+    ArrayList<Switch> daySwitches, nightSwitches;
+    ArrayList<TextView> dayTimes, nightTimes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,9 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         selectedDay = (TextView) findViewById(R.id.selectedDay);
 
         selectDay();
+
+        dayTimes = new ArrayList<>();
+        nightTimes = new ArrayList<>();
 
         dayswitch1 = (TextView) findViewById(R.id.dayswitch1);
         dayswitch1.setOnClickListener(this);
@@ -52,6 +63,21 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         nightswitch5 = (TextView) findViewById(R.id.nightswitch5);
         nightswitch5.setOnClickListener(this);
 
+        dayTimes.add(dayswitch1);
+        dayTimes.add(dayswitch2);
+        dayTimes.add(dayswitch3);
+        dayTimes.add(dayswitch4);
+        dayTimes.add(dayswitch5);
+
+        nightTimes.add(nightswitch1);
+        nightTimes.add(nightswitch2);
+        nightTimes.add(nightswitch3);
+        nightTimes.add(nightswitch4);
+        nightTimes.add(nightswitch5);
+
+        daySwitches = new ArrayList<>();
+        nightSwitches = new ArrayList<>();
+
         switch1 = (Switch) findViewById(R.id.toggle1);
         switch2 = (Switch) findViewById(R.id.toggle2);
         switch3 = (Switch) findViewById(R.id.toggle3);
@@ -62,6 +88,17 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         nSwitch3 = (Switch) findViewById(R.id.ntoggle3);
         nSwitch4 = (Switch) findViewById(R.id.ntoggle4);
         nSwitch5 = (Switch) findViewById(R.id.ntoggle5);
+
+        daySwitches.add(switch1);
+        daySwitches.add(switch2);
+        daySwitches.add(switch3);
+        daySwitches.add(switch4);
+        daySwitches.add(switch5);
+        nightSwitches.add(nSwitch1);
+        nightSwitches.add(nSwitch2);
+        nightSwitches.add(nSwitch3);
+        nightSwitches.add(nSwitch4);
+        nightSwitches.add(nSwitch5);
 
         switch1.setOnCheckedChangeListener(this);
         switch2.setOnCheckedChangeListener(this);
@@ -74,6 +111,28 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         nSwitch4.setOnCheckedChangeListener(this);
         nSwitch5.setOnCheckedChangeListener(this);
 
+        switches = ((GlobalResources) getApplication()).getWeekProgram().getDayProgram(mDay);
+        initializeSwitches();
+    }
+
+    private void initializeSwitches() {
+        int i = 0;
+        for (org.thermostatapp.util.Switch s : switches) {
+            if(!s.getState()) {
+                i++;
+                continue;
+            } else {
+                if(s.getType().equals("day")){
+                    daySwitches.get(i/2).setChecked(true);
+                    dayTimes.get(i/2).setText(s.getTime());
+                } else {
+                    nightSwitches.get(i/2).setChecked(true);
+                    nightTimes.get(i/2).setText(s.getTime());
+                }
+                i++;
+            }
+
+        }
     }
 
     private void selectDay() {

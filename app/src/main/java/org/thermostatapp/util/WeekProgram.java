@@ -47,6 +47,10 @@ public class WeekProgram {
         set_durations();
     }
 
+    public ArrayList<Switch> getDayProgram(int day){
+        return this.data.get(valid_days[day]);
+    }
+
     public String toXML() throws NullPointerException {
         StringBuilder build = new StringBuilder();
         String prefix;
