@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="60dp"
+                android:layout_marginStart="45dp"
                 android:background="@android:color/transparent"
                 android:text="Day"
                 android:textColor="@color/dark_grey"
@@ -46,7 +46,7 @@
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/sun"
                 android:tint="@color/dark_grey" />
@@ -55,11 +55,12 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_toStartOf="@+id/daySet"
+                android:layout_marginEnd="25dp">
 
                 <org.thermostatapp.util.EditTemp
                     android:id="@+id/daytemp"
@@ -81,15 +82,17 @@
                     android:text="&#x2103;"
                     android:textColor="@color/dark_grey"
                     android:textSize="40dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/daySet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/linearLayout2"
-                android:layout_centerHorizontal="true"
+                android:layout_alignBaseline="@+id/textView3"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="14dp"
                 android:text="Change" />
         </RelativeLayout>
 
@@ -109,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="60dp"
+                android:layout_marginStart="45dp"
                 android:background="@android:color/transparent"
                 android:text="Night"
                 android:textColor="@color/dark_grey"
@@ -120,22 +123,22 @@
                 android:id="@+id/moon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/moon"
-                android:tint="@color/dark_grey" />
+                android:tint="@color/dark_grey"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/nightSet"
+                android:layout_marginEnd="25dp">
 
                 <org.thermostatapp.util.EditTemp
                     android:id="@+id/nighttemp"
@@ -157,15 +160,16 @@
                     android:text="&#x2103;"
                     android:textColor="@color/dark_grey"
                     android:textSize="40dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/nightSet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/linearLayout1"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="14dp"
                 android:text="Change" />
 
         </RelativeLayout>
@@ -183,12 +187,12 @@
                 android:id="@+id/switch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="353dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true" />
+                tools:layout_editor_absoluteY="353dp" />
 
             <TextView
                 android:id="@+id/textView1"
@@ -198,7 +202,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="60dp"
                 android:background="@android:color/transparent"
-                android:text="Week Schedule"
+                android:text="Vacation Mode"
                 android:textColor="@color/dark_grey"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -215,17 +219,18 @@
                 android:tint="@color/dark_grey" />
 
         </RelativeLayout>
+
         <TextView
             android:id="@+id/prefs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp"
             android:background="@android:color/transparent"
             android:text="Preferences"
             android:textColor="@color/primary_text"
-            android:textSize="35dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:textSize="35dp" />
     </RelativeLayout>
 
 </LinearLayout>
