@@ -10,7 +10,7 @@ import java.net.ConnectException;
 
 public class GlobalResources extends Application {
     public WeekProgram wpg;
-    public double dayTemp, nightTemp, overrideTemp, vacTemp;
+    public double dayTemp = 30.0, nightTemp = 5.0, overrideTemp, vacTemp;
 
     @Override
     public void onCreate() {

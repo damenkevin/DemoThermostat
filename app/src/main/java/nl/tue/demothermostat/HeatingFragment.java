@@ -86,13 +86,13 @@ public class HeatingFragment extends Fragment {
                     @Override
                     public void run() {
                         try {
-                            HeatingSystem.put("targetTemperature", "30");
+                            HeatingSystem.put("targetTemperature", temp.getText().toString().replace("\u2103", "").trim());
                         } catch (InvalidInputValueException e) {
                             e.printStackTrace();
                         }
                     }
                 }).start();
-                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", 2000);
+                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", Toast.LENGTH_SHORT);
                 t.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0,50);
                 t.show();
             }
