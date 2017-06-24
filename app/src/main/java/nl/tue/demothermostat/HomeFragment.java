@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.thermostatapp.util.CurrTempTextView;
+import org.thermostatapp.util.GlobalResources;
 import org.thermostatapp.util.HeatingSystem;
 import org.thermostatapp.util.TemperatureCheck;
 
@@ -37,7 +38,7 @@ public class HomeFragment extends Fragment {
             public void run() {
                 long lastCheck = 0L;
                 while (true) {
-                    if (System.currentTimeMillis() - lastCheck > 3000) {
+                    if (System.currentTimeMillis() - lastCheck > 4000) {
                         lastCheck = System.currentTimeMillis();
                         try {
                             currentTemp = HeatingSystem.get("currentTemperature");
@@ -55,14 +56,13 @@ public class HomeFragment extends Fragment {
             }
         }).start();
 
-        // Initialize the text view with the initial value
-        CurrTempTextView intTextView = (CurrTempTextView)getView().findViewById(R.id.celciuscurrent);
-        intTextView.setText(String.valueOf(t.getValue()));
+        CurrTempTextView tempView = (CurrTempTextView)getView().findViewById(R.id.celciuscurrent);
+        tempView.setText(String.valueOf(t.getValue()));
 
-        // Setup the text view as a listener so it gets updated whenever the int
-        // value changes
-        t.setListener(intTextView);
+        t.setListener(tempView);
 
+        ((TextView)getView().findViewById(R.id.daytemp)).setText(String.valueOf(((GlobalResources)getActivity().getApplication()).dayTemp));
+        ((TextView)getView().findViewById(R.id.nighttemp)).setText(String.valueOf(((GlobalResources)getActivity().getApplication()).nightTemp));
 
     }
 

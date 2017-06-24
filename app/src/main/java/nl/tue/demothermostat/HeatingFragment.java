@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,7 +78,7 @@ public class HeatingFragment extends Fragment {
             }
         });
 
-        Button setTemp = (Button) getView().findViewById(R.id.setTemp);
+        ImageView setTemp = (ImageView) getView().findViewById(R.id.setTemp);
         setTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
