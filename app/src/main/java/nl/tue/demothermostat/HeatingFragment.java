@@ -3,12 +3,14 @@ package nl.tue.demothermostat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.thermostatapp.util.HeatingSystem;
 import org.thermostatapp.util.InvalidInputValueException;
@@ -20,7 +22,7 @@ public class HeatingFragment extends Fragment {
     int vtemp = 160;
     int atemp = vtemp+50;
     CircleSeekBar seekBar;
-    TextView temp, test;
+    TextView temp;
 
 
     @Override
@@ -90,6 +92,9 @@ public class HeatingFragment extends Fragment {
                         }
                     }
                 }).start();
+                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", 2000);
+                t.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0,50);
+                t.show();
             }
         });
 

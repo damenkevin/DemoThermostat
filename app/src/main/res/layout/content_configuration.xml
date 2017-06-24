@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,131 +11,216 @@
     android:background="@drawable/gradient">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="495dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@android:color/transparent">
 
-        <TextView
-            android:id="@+id/daytextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/linearLayout1"
-            android:layout_alignStart="@+id/linearLayout1"
-            android:layout_marginBottom="58dp"
-            android:layout_marginStart="-1dp"
-            android:background="@android:color/transparent"
-            android:inputType="number"
-            android:text="Day Temperature"
-            android:textColor="@android:color/black"
-            android:textSize="15dp"
-            android:textStyle="bold" 
-            />
-
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
-            android:orientation="horizontal"
-            android:background="@android:color/transparent">
-
-            <EditText
-                android:id="@+id/daytemp"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:inputType="number"
-                android:text="21.0"
-                android:textColor="@color/primary_text"
-                android:textSize="40dp" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200dp"
+            android:background="@color/bittransparentwhite">
 
             <TextView
-                android:id="@+id/celciusday"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:inputType="number"
-                android:text="&#x2103;"
-                android:textColor="@color/primary_text"
-                android:textSize="40dp" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/daySet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/linearLayout1"
-            android:layout_below="@+id/daytextview"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="23dp"
-            android:text="Set" />
-
-        <TextView
-            android:id="@+id/nighttextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/daytextview"
-            android:layout_alignBottom="@+id/daytextview"
-            android:layout_alignStart="@+id/linearLayout2"
-            android:background="@android:color/transparent"
-            android:inputType="numberDecimal"
-            android:text="Night Temperature"
-            android:textColor="@android:color/black"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="100dp"
-            android:orientation="horizontal"
-            android:background="@android:color/transparent">
-
-            <EditText
-                android:id="@+id/nighttemp"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:inputType="numberDecimal"
-                android:text="16.0"
-                android:textColor="@color/primary_text"
-                android:textSize="40dp" />
-
-            <TextView
-                android:id="@+id/celciusnight"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="60dp"
                 android:background="@android:color/transparent"
-                android:inputType="number"
-                android:text="&#x2103;"
-                android:textColor="@color/primary_text"
-                android:textSize="40dp" />
-        </LinearLayout>
+                android:text="Day"
+                android:textColor="@color/dark_grey"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/nightSet"
+            <ImageView
+                android:id="@+id/sun"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/sun"
+                android:tint="@color/dark_grey" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/daytemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="16.0"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/celciusday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="&#x2103;"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="40dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/daySet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_centerHorizontal="true"
+                android:text="Change" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_marginTop="30dp"
+            android:background="@color/bittransparentwhite">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="60dp"
+                android:background="@android:color/transparent"
+                android:text="Night"
+                android:textColor="@color/dark_grey"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/moon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/moon"
+                android:tint="@color/dark_grey" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nighttemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="21.0"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/celciusnight"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:text="&#x2103;"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="40dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/nightSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/linearLayout1"
+                android:layout_centerHorizontal="true"
+                android:text="Change" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_marginTop="30dp"
+            android:background="@color/bittransparentwhite">
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="270dp"
+                tools:layout_editor_absoluteY="353dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="60dp"
+                android:background="@android:color/transparent"
+                android:text="Week Schedule"
+                android:textColor="@color/dark_grey"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/schedule"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/calendar"
+                android:tint="@color/dark_grey" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/prefs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/daySet"
-            android:layout_alignBottom="@+id/daySet"
-            android:layout_alignEnd="@+id/linearLayout2"
-            android:layout_marginEnd="7dp"
-            android:text="Set" />
-
+            android:layout_marginTop="26dp"
+            android:background="@android:color/transparent"
+            android:text="Preferences"
+            android:textColor="@color/primary_text"
+            android:textSize="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
