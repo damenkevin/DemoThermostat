@@ -86,16 +86,7 @@
 
     </RelativeLayout>
 
-    <!--<ImageView-->
-        <!--android:id="@+id/setTemp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="39dp"-->
-        <!--android:src="@drawable/checkmark"-->
-        <!--android:tint="@color/primary_text"-->
-        <!--android:background="@android:color/transparent"/>-->
+
     <Button
         android:id="@+id/setTemp"
         android:layout_width="wrap_content"
