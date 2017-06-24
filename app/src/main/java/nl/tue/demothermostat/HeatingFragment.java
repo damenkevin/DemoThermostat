@@ -78,7 +78,7 @@ public class HeatingFragment extends Fragment {
             }
         });
 
-        ImageView setTemp = (ImageView) getView().findViewById(R.id.setTemp);
+        Button setTemp = (Button) getView().findViewById(R.id.setTemp);
         setTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
