@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,7 +79,7 @@ public class HeatingFragment extends Fragment {
             }
         });
 
-        ImageView setTemp = (ImageView) getView().findViewById(R.id.setTemp);
+        Button setTemp = (Button) getView().findViewById(R.id.setTemp);
         setTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +93,7 @@ public class HeatingFragment extends Fragment {
                         }
                     }
                 }).start();
-                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", 2000);
+                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", Toast.LENGTH_LONG);
                 t.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0,50);
                 t.show();
             }
