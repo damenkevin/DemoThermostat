@@ -139,11 +139,11 @@
         android:id="@+id/setProgram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
         android:background="@color/white"
         android:padding="8dp"
-        android:text="Set Program"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/relativeLayout7"
-        android:layout_centerHorizontal="true" />
+        android:text="Apply Program" />
 
 </RelativeLayout>
