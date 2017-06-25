@@ -25,9 +25,6 @@
             android:label="Thermostat"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TestingWS"
-            android:label="Thermostat" />
-        <activity
             android:name=".WeekDay"
             android:label="@string/title_activity_week_day" />
         <activity

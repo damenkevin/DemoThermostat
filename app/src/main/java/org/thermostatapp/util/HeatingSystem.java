@@ -30,6 +30,7 @@ public class HeatingSystem {
 
     /**
      * Retrieving weekProgram
+     *
      * @return
      * @throws ConnectException
      * @throws CorruptWeekProgramException
@@ -98,6 +99,7 @@ public class HeatingSystem {
 
     /**
      * Returns the switches for a particular day
+     *
      * @param parser
      * @return
      * @throws XmlPullParserException
@@ -145,13 +147,13 @@ public class HeatingSystem {
 
     /**
      * Retrieves all data except for weekProgram
-     * @param attribute_name
-     *            = { "day", "time", "currentTemperature", "dayTemperature",
-     *            "nightTemperature", "weekProgramState" }; Note that
-     *            "weekProgram" has not been included, because it has a more
-     *            complex value than a single value. Therefore the funciton
-     *            getWeekProgramFromServer() is implemented which return a WeekProgram
-     *            object that can be easily altered.
+     *
+     * @param attribute_name = { "day", "time", "currentTemperature", "dayTemperature",
+     *                       "nightTemperature", "weekProgramState" }; Note that
+     *                       "weekProgram" has not been included, because it has a more
+     *                       complex value than a single value. Therefore the funciton
+     *                       getWeekProgramFromServer() is implemented which return a WeekProgram
+     *                       object that can be easily altered.
      */
     public static String get(String attribute_name) throws ConnectException,
             IllegalArgumentException {
@@ -240,6 +242,7 @@ public class HeatingSystem {
     /**
      * Return false if weekProgramState is on,
      * true otherwise
+     *
      * @return
      */
     public static boolean getVacationMode() {
@@ -259,6 +262,7 @@ public class HeatingSystem {
 
     /**
      * Method for GET and PUT requests
+     *
      * @param link
      * @param type
      * @return
@@ -290,6 +294,7 @@ public class HeatingSystem {
     /**
      * Checks whether the temperature is within the range [5,30]
      * and is a double with one decimal like "20.0".
+     *
      * @param temperature
      * @return
      * @throws InvalidInputValueException
@@ -311,6 +316,7 @@ public class HeatingSystem {
 
     /**
      * Upload data to the server, everything except for weekProgram
+     *
      * @param attribute_name
      * @param value
      * @throws IllegalArgumentException
@@ -423,6 +429,7 @@ public class HeatingSystem {
 
     /**
      * Uploading the updated or adjusted week program to the server
+     *
      * @param wpg
      */
     public static void setWeekProgram(WeekProgram wpg) {
