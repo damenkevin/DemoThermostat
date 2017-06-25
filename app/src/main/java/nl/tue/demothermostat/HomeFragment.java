@@ -17,10 +17,10 @@ import org.thermostatapp.util.TemperatureCheck;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    public static String currentTemp = "", sDay = "", sTime = "";
+    public static String currentTemp = "20.0", sDay = "Sunday", sTime = "12:34";
     static TemperatureCheck t = new TemperatureCheck("20.0");
-    static TemperatureCheck day = new TemperatureCheck("");
-    static TemperatureCheck time = new TemperatureCheck("");
+    static TemperatureCheck day = new TemperatureCheck("Sunday");
+    static TemperatureCheck time = new TemperatureCheck("12:34");
     public static Handler handler = new Handler(Looper.getMainLooper());
     boolean pause = false;
     Object wait = new Object();

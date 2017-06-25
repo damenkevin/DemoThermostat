@@ -21,7 +21,7 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
     TextView dayswitch1, dayswitch2, dayswitch3, dayswitch4, dayswitch5, nightswitch1, nightswitch2, nightswitch3, nightswitch4, nightswitch5;
     Switch switch1, switch2, switch3, switch4, switch5, nSwitch1, nSwitch2, nSwitch3, nSwitch4, nSwitch5;
     private int mDay, mHour, mMinute;
-    ArrayList<org.thermostatapp.util.Switch> switches = new ArrayList<>();
+    ArrayList<org.thermostatapp.util.Switch> switches = new ArrayList<>(), tempDay, tempNight;
     ArrayList<Switch> daySwitches, nightSwitches;
     ArrayList<TextView> dayTimes, nightTimes;
 
@@ -119,26 +119,44 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         nSwitch5.setOnCheckedChangeListener(this);
 
         switches = ((GlobalResources) getApplication()).getLocalWeekProgram().getDayProgram(mDay);
+
         initializeSwitches();
     }
 
     private void initializeSwitches() {
-        int i = 0;
+
+
+        tempDay = new ArrayList<>();
+        tempNight = new ArrayList<>();
+
         for (org.thermostatapp.util.Switch s : switches) {
+            if (s.getType().equals("day")) {
+                tempDay.add(s);
+            } else {
+                tempNight.add(s);
+            }
+        }
+        int i = 0;
+        for (org.thermostatapp.util.Switch s : tempDay) {
             if (!s.getState()) {
                 i++;
                 continue;
             } else {
-                if (s.getType().equals("day")) {
-                    daySwitches.get(i).setChecked(true);
-                    dayTimes.get(i).setText(s.getTime());
-                } else {
-                    nightSwitches.get(i-5).setChecked(true);
-                    nightTimes.get(i-5).setText(s.getTime());
-                }
-                i++;
+                daySwitches.get(i).setChecked(true);
+                dayTimes.get(i).setText(s.getTime());
             }
-
+            i++;
+        }
+        i = 0;
+        for (org.thermostatapp.util.Switch s : tempNight) {
+            if (!s.getState()) {
+                i++;
+                continue;
+            } else {
+                nightSwitches.get(i).setChecked(true);
+                nightTimes.get(i).setText(s.getTime());
+            }
+            i++;
         }
     }
 
