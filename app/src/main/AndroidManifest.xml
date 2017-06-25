@@ -10,7 +10,7 @@
         android:name="org.thermostatapp.util.GlobalResources"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Home"
+        android:label="Thermostat"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
