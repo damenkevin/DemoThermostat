@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="nl.tue.demothermostat.TemperaturePicker">
 
+
+
     <include layout="@layout/content_temperature_picker" />
 
 </android.support.design.widget.CoordinatorLayout>

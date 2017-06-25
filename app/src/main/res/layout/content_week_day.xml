@@ -417,6 +417,18 @@
                 android:layout_alignTop="@+id/selectedDay"
                 android:layout_alignEnd="@+id/relativeLayout1"
                 android:layout_marginTop="8.75dp"/>
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/minus_button"
+                android:tint="@color/primary_text"
+                android:rotation="90"
+                android:layout_marginTop="36dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp" />
         </RelativeLayout>
     </ScrollView>
 
