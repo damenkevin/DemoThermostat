@@ -1,8 +1,12 @@
 /**
  * @author HTI students, Spring 2013, adjusted by N.Stash
- *
  */
 package org.thermostatapp.util;
+
+import android.util.Xml;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -17,11 +21,6 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Locale;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import android.util.Xml;
 
 public class HeatingSystem {
 
@@ -162,10 +161,10 @@ public class HeatingSystem {
         // WeekProgram you need to call getWeekProgramFromServer().
         String link = "";
         boolean match = false;
-        String[] valid_names = { "day", "time", "currentTemperature", "targetTemperature",
-                "dayTemperature", "nightTemperature", "weekProgramState" };
-        String[] tag_names = { "current_day", "time", "current_temperature", "target_temperature",
-                "day_temperature", "night_temperature", "week_program_state" };
+        String[] valid_names = {"day", "time", "currentTemperature", "targetTemperature",
+                "dayTemperature", "nightTemperature", "weekProgramState"};
+        String[] tag_names = {"current_day", "time", "current_temperature", "target_temperature",
+                "day_temperature", "night_temperature", "week_program_state"};
         int i;
         for (i = 0; i < valid_names.length; i++) {
             if (attribute_name.equalsIgnoreCase(valid_names[i])) {
@@ -275,7 +274,7 @@ public class HeatingSystem {
         HttpURLConnection connect = (HttpURLConnection) url.openConnection();
         connect.setReadTimeout(HeatingSystem.TIME_OUT);
         connect.setConnectTimeout(HeatingSystem.TIME_OUT);
-        connect.setRequestProperty("Content-Type","application/xml");
+        connect.setRequestProperty("Content-Type", "application/xml");
         connect.setRequestMethod(type);
         if (type.equalsIgnoreCase("GET")) {
             connect.setDoInput(true);
@@ -325,8 +324,8 @@ public class HeatingSystem {
 
         String link = "";
         boolean match = false;
-        String[] valid_names = { "day", "time", "currentTemperature", "targetTemperature",
-                "dayTemperature", "nightTemperature", "weekProgramState" };
+        String[] valid_names = {"day", "time", "currentTemperature", "targetTemperature",
+                "dayTemperature", "nightTemperature", "weekProgramState"};
         for (int i = 0; i < valid_names.length; i++) {
             if (attribute_name.equalsIgnoreCase(valid_names[i])) {
                 match = true;
@@ -343,8 +342,8 @@ public class HeatingSystem {
         String tag_name = "";
         if (attribute_name.equals("day")) {
             tag_name = "current_day";
-            String[] valid_days = { "Monday", "Tuesday", "Wednesday",
-                    "Thursday", "Friday", "Saturday", "Sunday" };
+            String[] valid_days = {"Monday", "Tuesday", "Wednesday",
+                    "Thursday", "Friday", "Saturday", "Sunday"};
             for (int i = 0; i < valid_days.length; i++) {
                 if (value.equalsIgnoreCase(valid_days[i])) {
                     // Do not make it case-sensitive but adjust to the name with

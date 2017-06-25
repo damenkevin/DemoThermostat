@@ -52,8 +52,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/dayswitch1"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/dayswitch1"
@@ -64,7 +63,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -88,8 +87,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/dayswitch2"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/dayswitch2"
@@ -100,7 +98,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -124,8 +122,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/dayswitch3"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/dayswitch3"
@@ -136,7 +133,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -160,8 +157,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/dayswitch4"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/dayswitch4"
@@ -172,9 +168,10 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/relativeLayout5"
                 android:layout_width="500dp"
@@ -195,8 +192,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/dayswitch5"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/dayswitch5"
@@ -207,7 +203,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -244,8 +240,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/nightswitch1"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/nightswitch1"
@@ -256,7 +251,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -280,8 +275,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/nightswitch2"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/nightswitch2"
@@ -292,7 +286,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -316,8 +310,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/nightswitch3"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/nightswitch3"
@@ -328,7 +321,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -352,8 +345,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/nightswitch4"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/nightswitch4"
@@ -364,9 +356,10 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/nrelativeLayout5"
                 android:layout_width="500dp"
@@ -388,8 +381,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="96dp"
                     android:layout_toEndOf="@+id/nightswitch5"
-                    android:switchTextAppearance="@style/TextAppearance.AppCompat"
-                    />
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat" />
 
                 <TextView
                     android:id="@+id/nightswitch5"
@@ -400,7 +392,7 @@
                     android:layout_marginStart="91dp"
                     android:text="00:00"
                     android:textSize="25dp"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
 
@@ -414,7 +406,7 @@
                 android:text="Day"
                 android:textSize="35dp"
                 android:background="@android:color/transparent"
-                android:textColor="@color/primary_text"/>
+                android:textColor="@color/primary_text" />
 
             <ImageView
                 android:id="@+id/saveDay"

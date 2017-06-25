@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 public class ThermostatActivity extends Activity {
 
     int vtemp = 160;
-    int atemp = vtemp+50;
+    int atemp = vtemp + 50;
     TextView temp;
     SeekBar seekBar;
     BottomNavigationView bottom;
@@ -28,23 +27,23 @@ public class ThermostatActivity extends Activity {
         setContentView(R.layout.fragment_heating);
 
 
-        ImageView bPlus = (ImageView)findViewById(R.id.bPlus);
+        ImageView bPlus = (ImageView) findViewById(R.id.bPlus);
         bPlus.setImageResource(R.drawable.add_button);
 
 
-        ImageView bMinus = (ImageView)findViewById(R.id.bMinus);
-        temp = (TextView)findViewById(R.id.temp);
+        ImageView bMinus = (ImageView) findViewById(R.id.bMinus);
+        temp = (TextView) findViewById(R.id.temp);
 
 
-        seekBar = (SeekBar)findViewById(R.id.seekBar);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
         seekBar.setMax(250);
         seekBar.setProgress(vtemp);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 vtemp = i;
-                atemp = i+50;
-                temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                atemp = i + 50;
+                temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
             }
 
             @Override
@@ -60,10 +59,10 @@ public class ThermostatActivity extends Activity {
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(vtemp<250){
+                if (vtemp < 250) {
                     vtemp++;
-                    atemp = vtemp+50;
-                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    atemp = vtemp + 50;
+                    temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
                     seekBar.setProgress(vtemp);
                 }
             }
@@ -71,17 +70,17 @@ public class ThermostatActivity extends Activity {
         bMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(vtemp>0){
+                if (vtemp > 0) {
                     vtemp--;
-                    atemp = vtemp+50;
-                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    atemp = vtemp + 50;
+                    temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
                     seekBar.setProgress(vtemp);
                 }
 
             }
         });
 
-        bottom = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        bottom = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -92,9 +91,9 @@ public class ThermostatActivity extends Activity {
 
     }
 
-    private void bottomBar(int id){
+    private void bottomBar(int id) {
         Intent intent = null;
-        switch(id){
+        switch (id) {
             case R.id.action_home:
                 intent = new Intent(this, HomeActivity.class);
                 ;

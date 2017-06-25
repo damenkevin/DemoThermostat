@@ -1,20 +1,18 @@
 /**
  * @author HTI students, Spring 2013, adjusted by N.Stash
- *
  */
 package org.thermostatapp.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class WeekProgram {
     /* Switches are stored in a hashmap, mapping every day to its
     corresponding set of switches */
     public HashMap<String, ArrayList<Switch>> data = new HashMap<String, ArrayList<Switch>>();
     private int[] nr_switches_active;
-    public static String[] valid_days = { "Monday", "Tuesday", "Wednesday",
-            "Thursday", "Friday", "Saturday", "Sunday" };
+    public static String[] valid_days = {"Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday", "Sunday"};
 
     /**
      * Constructor
@@ -43,11 +41,11 @@ public class WeekProgram {
             this.data.get(day).add(new Switch("day", false, "00:00"));
             this.data.get(day).add(new Switch("day", false, "00:00"));
         }
-		/* Create the default switches settings*/
+        /* Create the default switches settings*/
         set_durations();
     }
 
-    public ArrayList<Switch> getDayProgram(int day){
+    public ArrayList<Switch> getDayProgram(int day) {
         return this.data.get(valid_days[day]);
     }
 
@@ -88,11 +86,11 @@ public class WeekProgram {
 
     public boolean duplicates(ArrayList<Switch> switches) {
         boolean duplicatesFound = false;
-        for (int i = 0; i < (switches.size() - 2) &&!duplicatesFound ; i++) {
-            for (int j = i+1; j < switches.size() - 1; j++) {
-                if ( switches.get(i).getState() && switches.get(j).getState() &&
+        for (int i = 0; i < (switches.size() - 2) && !duplicatesFound; i++) {
+            for (int j = i + 1; j < switches.size() - 1; j++) {
+                if (switches.get(i).getState() && switches.get(j).getState() &&
                         switches.get(i).getType().equals(switches.get(j).getType()) &&
-                        switches.get(i).getTime().equals(switches.get(j).getTime()) ) {
+                        switches.get(i).getTime().equals(switches.get(j).getTime())) {
                     duplicatesFound = true;
                     break;
                 }
@@ -133,9 +131,9 @@ public class WeekProgram {
     }
 
     //Setting switches. Switches list should always exactly consist out of 10 elements.
-     //* @param day
-     //* @param switches_list
-     //* @param nr_switches
+    //* @param day
+    //* @param switches_list
+    //* @param nr_switches
     public void setSwitches(String day, ArrayList<Switch> switches_list,
                             int nr_switches) {
         // Validate input???

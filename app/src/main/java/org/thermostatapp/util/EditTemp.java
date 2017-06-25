@@ -3,7 +3,6 @@ package org.thermostatapp.util;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
-import android.widget.EditText;
 
 /**
  * Created by gsmet on 24-Jun-17.

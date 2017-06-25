@@ -11,7 +11,7 @@
     android:paddingTop="0dp"
     tools:context=".ThermostatActivity"
     android:theme="@style/AppTheme"
-    android:background="@android:color/transparent"
+    android:background="@drawable/gradient"
     android:fitsSystemWindows="true">
 
     <RelativeLayout

@@ -62,7 +62,7 @@
                 android:layout_toStartOf="@+id/daySet"
                 android:layout_marginEnd="25dp">
 
-                <org.thermostatapp.util.EditTemp
+                <TextView
                     android:id="@+id/daytemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                 android:layout_toStartOf="@+id/nightSet"
                 android:layout_marginEnd="25dp">
 
-                <org.thermostatapp.util.EditTemp
+                <TextView
                     android:id="@+id/nighttemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

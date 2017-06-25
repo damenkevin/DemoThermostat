@@ -6,11 +6,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="org.thermostatapp.util.GlobalResources"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Home"
         android:supportsRtl="true"
-        android:name="org.thermostatapp.util.GlobalResources"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity android:name=".HomeActivity">
@@ -36,7 +36,11 @@
         <activity
             android:name=".ConfigurationActivity"
             android:label="@string/title_activity_configuration"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TemperaturePicker"
+            android:label="@string/title_activity_temperature_picker"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -86,11 +86,11 @@ public class GlobalResources extends Application {
         }).start();
     }
 
-    public WeekProgram getLocalWeekProgram(){
+    public WeekProgram getLocalWeekProgram() {
         return wpg;
     }
 
-    public WeekProgram getWeekProgramFromServer(){
+    public WeekProgram getWeekProgramFromServer() {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -115,7 +115,7 @@ public class GlobalResources extends Application {
         return wpg;
     }
 
-    public void setDayProgram(ArrayList<Switch> s, String day){
+    public void setDayProgram(ArrayList<Switch> s, String day) {
         wpg.data.put(day, s);
     }
 

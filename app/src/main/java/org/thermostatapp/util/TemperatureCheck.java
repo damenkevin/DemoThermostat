@@ -18,7 +18,7 @@ public class TemperatureCheck {
 
     public void setValue(String mValue) {
         this.mValue = mValue;
-        if(listener != null)
+        if (listener != null)
             listener.onValueChanged(mValue);
     }
 
@@ -26,7 +26,7 @@ public class TemperatureCheck {
         return mValue;
     }
 
-    public static interface TemperatureListener{
+    public static interface TemperatureListener {
         void onValueChanged(String newValue);
     }
 }

@@ -2,7 +2,6 @@ package nl.tue.demothermostat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +12,6 @@ import android.widget.Toast;
 
 import org.thermostatapp.util.GlobalResources;
 import org.thermostatapp.util.HeatingSystem;
-import org.thermostatapp.util.Switch;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class ScheduleFragment extends Fragment implements View.OnClickListener {

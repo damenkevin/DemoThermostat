@@ -1,6 +1,6 @@
 /**
- * Class for testing Web Service (http://wwwis.win.tue.nl/2id40-ws), 
- * gives a few examples of 
+ * Class for testing Web Service (http://wwwis.win.tue.nl/2id40-ws),
+ * gives a few examples of
  * getting data from and uploading data to the server
  */
 package nl.tue.demothermostat;
@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import org.thermostatapp.util.*;
+
+import org.thermostatapp.util.HeatingSystem;
+import org.thermostatapp.util.Switch;
+import org.thermostatapp.util.WeekProgram;
 
 public class TestingWS extends Activity {
 
@@ -25,15 +28,15 @@ public class TestingWS extends Activity {
         setContentView(R.layout.testing_ws);
 
         /* Use BASE_ADDRESS dedicated for your group,
-		 * change 100 to you group number
+         * change 100 to you group number
 		 */
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/12";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        getdata = (Button)findViewById(R.id.getdata);
-        putdata = (Button)findViewById(R.id.putdata);
-        data1 = (TextView)findViewById(R.id.data1);
-        data2 = (TextView)findViewById(R.id.data2);
+        getdata = (Button) findViewById(R.id.getdata);
+        putdata = (Button) findViewById(R.id.putdata);
+        data1 = (TextView) findViewById(R.id.data1);
+        data2 = (TextView) findViewById(R.id.data2);
 
         /* When the user clicks on GET Data button the value of the corresponding parameter is read from the server
         and displayed in TextView data1
@@ -64,7 +67,7 @@ public class TestingWS extends Activity {
                                 }
                             });
                         } catch (Exception e) {
-                            System.err.println("Error from getdata "+e);
+                            System.err.println("Error from getdata " + e);
                         }
                     }
                 }).start();
@@ -99,7 +102,7 @@ public class TestingWS extends Activity {
                             wpg.data.get("Monday").set(7, new Switch("day", true, "12:00"));
                             wpg.data.get("Monday").set(8, new Switch("day", true, "18:00"));
                             boolean duplicates = wpg.duplicates(wpg.data.get("Monday"));
-                            System.out.println("Duplicates found "+duplicates);
+                            System.out.println("Duplicates found " + duplicates);
 
                             //Upload the updated program
                             //HeatingSystem.setWeekProgram(wpg);

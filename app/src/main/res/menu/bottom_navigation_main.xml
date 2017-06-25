@@ -5,19 +5,19 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/home"
-        android:title="Home"
+        android:title="Overview"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_heating"
         android:enabled="true"
         android:icon="@drawable/heating"
-        android:title="Heating"
+        android:title="Thermostat"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_schedule"
         android:enabled="true"
         android:icon="@drawable/clock"
-        android:title="Schedule"
+        android:title="Week program"
         app:showAsAction="ifRoom" />
 
 </menu>

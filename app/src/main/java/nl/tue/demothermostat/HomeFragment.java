@@ -13,10 +13,7 @@ import android.widget.TextView;
 
 import org.thermostatapp.util.CurrTempTextView;
 import org.thermostatapp.util.GlobalResources;
-import org.thermostatapp.util.HeatingSystem;
 import org.thermostatapp.util.TemperatureCheck;
-
-import java.net.ConnectException;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {

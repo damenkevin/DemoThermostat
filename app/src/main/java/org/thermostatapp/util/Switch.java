@@ -14,6 +14,7 @@ public class Switch {
 
     /**
      * Constructor
+     *
      * @param type
      * @param state
      * @param time
@@ -48,7 +49,10 @@ public class Switch {
         this.dur = dur;
     }
 */
-    /** GET Methods */
+
+    /**
+     * GET Methods
+     */
 
     public String getType() {
         return this.type;
@@ -70,7 +74,9 @@ public class Switch {
         return this.dur;
     }
 
-    /** SET Methods */
+    /**
+     * SET Methods
+     */
     public void setType(String type) {
         // Do a dimension check.
         if (type.equals("day") || type.equals("night"))
@@ -102,6 +108,7 @@ public class Switch {
 
     /**
      * Converts the objects properties to the appropriate XML string format
+     *
      * @return
      */
     public String toXMLString() {
@@ -115,6 +122,7 @@ public class Switch {
 
     /**
      * Checks whether the syntax for time is correct
+     *
      * @param t
      * @return
      */

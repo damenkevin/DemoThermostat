@@ -29,5 +29,5 @@
         android:layout_gravity="start"
         design:menu="@menu/bottom_navigation_main"
         android:elevation="8dp"
-        app:itemBackground="@android:color/transparent"/>
+        app:itemBackground="@android:color/transparent" />
 </LinearLayout>

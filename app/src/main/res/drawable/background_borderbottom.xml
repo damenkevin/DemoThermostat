@@ -5,7 +5,7 @@
             <solid android:color="@color/background_border" />
         </shape>
     </item>
-    <item android:bottom="1dp" >
+    <item android:bottom="1dp">
         // add android:right="5dp" and android:left="5dp" for border on left and right
         <shape android:shape="rectangle">
             <solid android:color="@color/background_dark" />

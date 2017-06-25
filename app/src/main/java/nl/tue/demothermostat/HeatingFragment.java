@@ -1,6 +1,5 @@
 package nl.tue.demothermostat;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
@@ -20,7 +19,7 @@ import io.feeeei.circleseekbar.CircleSeekBar;
 
 public class HeatingFragment extends Fragment {
     int vtemp = 160;
-    int atemp = vtemp+50;
+    int atemp = vtemp + 50;
     CircleSeekBar seekBar;
     TextView temp;
 
@@ -35,12 +34,12 @@ public class HeatingFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ImageView bPlus = (ImageView)getView().findViewById(R.id.bPlus);
+        ImageView bPlus = (ImageView) getView().findViewById(R.id.bPlus);
         bPlus.setImageResource(R.drawable.add_button);
 
 
-        ImageView bMinus = (ImageView)getView().findViewById(R.id.bMinus);
-        temp = (TextView)getView().findViewById(R.id.temp);
+        ImageView bMinus = (ImageView) getView().findViewById(R.id.bMinus);
+        temp = (TextView) getView().findViewById(R.id.temp);
 
         seekBar = (CircleSeekBar) getView().findViewById(R.id.seekBar);
         seekBar.setMaxProcess(250);
@@ -49,18 +48,18 @@ public class HeatingFragment extends Fragment {
             @Override
             public void onChanged(CircleSeekBar seekBar, int i) {
                 vtemp = i;
-                atemp = i+50;
-                temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                atemp = i + 50;
+                temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
             }
 
         });
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(vtemp<250){
+                if (vtemp < 250) {
                     vtemp++;
-                    atemp = vtemp+50;
-                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    atemp = vtemp + 50;
+                    temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
                     seekBar.setCurProcess(vtemp);
                 }
             }
@@ -68,10 +67,10 @@ public class HeatingFragment extends Fragment {
         bMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(vtemp>0){
+                if (vtemp > 0) {
                     vtemp--;
-                    atemp = vtemp+50;
-                    temp.setText(atemp/10 + "." + atemp%10 + " \u2103");
+                    atemp = vtemp + 50;
+                    temp.setText(atemp / 10 + "." + atemp % 10 + " \u2103");
                     seekBar.setCurProcess(vtemp);
                 }
 
@@ -92,8 +91,8 @@ public class HeatingFragment extends Fragment {
                         }
                     }
                 }).start();
-                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to "+atemp/10 + "." + atemp%10 + "\u2103", Toast.LENGTH_SHORT);
-                t.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0,50);
+                Toast t = Toast.makeText(getActivity(), "Temporary temperature set to " + atemp / 10 + "." + atemp % 10 + "\u2103", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 50);
                 t.show();
             }
         });
