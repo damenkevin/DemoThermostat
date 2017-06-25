@@ -30,6 +30,7 @@ public class GlobalResources extends Application {
                     wpg = HeatingSystem.getWeekProgram();
                     dayTemp = Double.valueOf(HeatingSystem.get("dayTemperature"));
                     nightTemp = Double.valueOf(HeatingSystem.get("nightTemperature"));
+                    vac = HeatingSystem.getVacationMode();
                 } catch (ConnectException e) {
                     e.printStackTrace();
                 } catch (CorruptWeekProgramException e) {
@@ -43,7 +44,7 @@ public class GlobalResources extends Application {
             public void run() {
                 long lastCheck = 0L;
                 while (true) {
-                    if (System.currentTimeMillis() - lastCheck > 4000) {
+                    if (System.currentTimeMillis() - lastCheck > 4200) {
                         lastCheck = System.currentTimeMillis();
                         try {
                             HomeFragment.currentTemp = HeatingSystem.get("currentTemperature");
