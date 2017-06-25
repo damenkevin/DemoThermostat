@@ -16,8 +16,8 @@
             android:id="@+id/relativeLayout01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/transparent">
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/dayswitch"
@@ -42,8 +42,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="11dp"
                 android:background="@color/white"
-                android:orientation="vertical"
-                android:elevation="2dp">
+                android:elevation="2dp"
+                android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/toggle1"
@@ -61,9 +61,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -96,9 +96,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -106,14 +106,14 @@
                 android:id="@+id/relativeLayout3"
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="23dp"
                 android:background="@color/white"
                 android:elevation="2dp"
-                android:orientation="vertical"
-                android:layout_below="@+id/relativeLayout2"
-                android:layout_centerHorizontal="true">
+                android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/toggle3"
@@ -131,9 +131,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -166,9 +166,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -201,9 +201,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -230,8 +230,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="11dp"
                 android:background="@color/white"
-                android:orientation="vertical"
-                android:elevation="2dp">
+                android:elevation="2dp"
+                android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/ntoggle1"
@@ -249,9 +249,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -284,9 +284,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -294,14 +294,14 @@
                 android:id="@+id/nrelativeLayout3"
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/nrelativeLayout2"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="23dp"
                 android:background="@color/white"
                 android:elevation="2dp"
-                android:orientation="vertical"
-                android:layout_below="@+id/nrelativeLayout2"
-                android:layout_centerHorizontal="true">
+                android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/ntoggle3"
@@ -319,9 +319,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -354,9 +354,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -366,10 +366,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/nrelativeLayout4"
+                android:layout_marginBottom="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="23dp"
-                android:layout_marginBottom="50dp"
                 android:background="@color/white"
                 android:elevation="2dp"
                 android:orientation="vertical">
@@ -390,9 +390,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="91dp"
+                    android:background="@android:color/transparent"
                     android:text="00:00"
-                    android:textSize="25dp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="25dp" />
 
             </RelativeLayout>
 
@@ -403,20 +403,20 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="26dp"
-                android:text="Day"
-                android:textSize="35dp"
                 android:background="@android:color/transparent"
-                android:textColor="@color/primary_text" />
+                android:text="Day"
+                android:textColor="@color/primary_text"
+                android:textSize="35dp" />
 
             <ImageView
                 android:id="@+id/saveDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/selectedDay"
-                android:layout_alignEnd="@+id/relativeLayout1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/save"
                 android:layout_alignTop="@+id/selectedDay"
-                android:layout_toEndOf="@+id/nightswitch"
-                app:srcCompat="@android:drawable/ic_menu_save" />
+                android:layout_alignEnd="@+id/relativeLayout1"
+                android:layout_marginTop="8.75dp"/>
         </RelativeLayout>
     </ScrollView>
 

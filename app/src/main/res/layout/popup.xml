@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
-    android:background="@drawable/gradient">
+    android:background="@android:color/transparent">
 
     <io.feeeei.circleseekbar.CircleSeekBar
         android:id="@+id/seekBar"
