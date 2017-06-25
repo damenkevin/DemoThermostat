@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import org.thermostatapp.util.GlobalResources;
 
@@ -36,10 +37,10 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
 
         selectedDay = (TextView) findViewById(R.id.selectedDay);
 
-        findViewById(R.id.saveDay).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveDayProgram();
+                onBackPressed();
             }
         });
 
@@ -129,11 +130,11 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
                 continue;
             } else {
                 if (s.getType().equals("day")) {
-                    daySwitches.get(i / 2).setChecked(true);
-                    dayTimes.get(i / 2).setText(s.getTime());
+                    daySwitches.get(i).setChecked(true);
+                    dayTimes.get(i).setText(s.getTime());
                 } else {
-                    nightSwitches.get(i / 2).setChecked(true);
-                    nightTimes.get(i / 2).setText(s.getTime());
+                    nightSwitches.get(i-5).setChecked(true);
+                    nightTimes.get(i-5).setText(s.getTime());
                 }
                 i++;
             }
@@ -194,8 +195,13 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
         }
 
         ((GlobalResources) getApplication()).setDayProgram(switches, selectedDay.getText().toString().trim());
+        Toast.makeText(getApplicationContext(), "Changes saved!", Toast.LENGTH_SHORT).show();
+    }
 
-        this.onBackPressed();
+    @Override
+    protected void onStop() {
+        super.onStop();
+        saveDayProgram();
     }
 
     @Override

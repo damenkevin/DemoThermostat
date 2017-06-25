@@ -408,15 +408,6 @@
                 android:textColor="@color/primary_text"
                 android:textSize="35dp" />
 
-            <ImageView
-                android:id="@+id/saveDay"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:tint="@color/white"
-                app:srcCompat="@drawable/save"
-                android:layout_alignTop="@+id/selectedDay"
-                android:layout_alignEnd="@+id/relativeLayout1"
-                android:layout_marginTop="8.75dp"/>
 
             <ImageView
                 android:id="@+id/back"

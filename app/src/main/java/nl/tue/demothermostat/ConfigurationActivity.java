@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.thermostatapp.util.GlobalResources;
 import org.thermostatapp.util.HeatingSystem;
@@ -32,6 +33,13 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
 
         day.setText(String.valueOf(((GlobalResources) getApplication()).dayTemp));
         night.setText(String.valueOf(((GlobalResources) getApplication()).nightTemp));
+
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         vacSwitch = ((android.widget.Switch) findViewById(R.id.vacSwitch));
 
@@ -83,6 +91,8 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
                         ((GlobalResources) getApplication()).getWeekProgramFromServer();
                     }
                 }).start();
+
+                Toast.makeText(getApplicationContext(),"Server's week program has been loaded!", Toast.LENGTH_SHORT).show();
             }
         });
     }

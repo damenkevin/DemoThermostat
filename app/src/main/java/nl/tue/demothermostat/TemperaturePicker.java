@@ -74,6 +74,15 @@ public class TemperaturePicker extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.backT).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ConfigurationActivity.class);
+                finish();
+                startActivity(i);
+            }
+        });
+
         day = getIntent().getBooleanExtra("day", false);
 
         Button setTemp = (Button) findViewById(R.id.setTemp);
