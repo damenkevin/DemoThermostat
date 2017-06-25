@@ -70,9 +70,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ((TextView) getView().findViewById(R.id.nighttemp)).setText(String.valueOf(((GlobalResources) getActivity().getApplication()).nightTemp));
 
         if (((GlobalResources) getActivity().getApplication()).vac)
-            ((TextView) getView().findViewById(R.id.vacationmode)).setText("enabled.");
+            ((TextView) getView().findViewById(R.id.vacationmode)).setText("enabled");
         else
-            ((TextView) getView().findViewById(R.id.vacationmode)).setText("disabled.");
+            ((TextView) getView().findViewById(R.id.vacationmode)).setText("disabled");
     }
 
     public static void tempChanged() {
