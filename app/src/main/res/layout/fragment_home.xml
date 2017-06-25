@@ -154,8 +154,8 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:orientation="horizontal"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_below="@+id/textView3"
+                    android:layout_alignStart="@+id/textView3">
 
                     <org.thermostatapp.util.CurrTempTextView
                         android:id="@+id/celciuscurrent"
