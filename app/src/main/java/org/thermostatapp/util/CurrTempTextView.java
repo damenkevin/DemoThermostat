@@ -19,6 +19,6 @@ public class CurrTempTextView extends android.support.v7.widget.AppCompatTextVie
 
     @Override
     public void onValueChanged(String newValue) {
-        setText(String.valueOf(newValue));
+        setText(newValue);
     }
 }

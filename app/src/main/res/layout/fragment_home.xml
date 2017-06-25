@@ -26,7 +26,6 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/currenttextview"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="88dp"
                 android:background="@android:color/transparent"
@@ -246,6 +245,26 @@
 
 
             </RelativeLayout>
+
+            <org.thermostatapp.util.CurrTempTextView
+                android:id="@+id/serverDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/currenttextview"
+                android:layout_below="@+id/relativeLayout7"
+                android:layout_marginTop="35dp"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <org.thermostatapp.util.CurrTempTextView
+                android:id="@+id/serverTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/serverDay"
+                android:layout_below="@+id/serverDay"
+                android:layout_marginTop="4dp"
+                android:text="TextView"
+                android:textSize="18sp" />
         </RelativeLayout>
     </FrameLayout>
 

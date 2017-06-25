@@ -1,5 +1,6 @@
 package nl.tue.demothermostat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,10 +19,15 @@ import org.thermostatapp.util.TemperatureCheck;
 import java.net.ConnectException;
 
 
-public class HomeFragment extends Fragment {
-    String currentTemp = "";
-    TemperatureCheck t = new TemperatureCheck("20.0");
-    Handler handler = new Handler(Looper.getMainLooper());
+public class HomeFragment extends Fragment implements View.OnClickListener {
+    public static String currentTemp = "", sDay = "", sTime = "";
+    static TemperatureCheck t = new TemperatureCheck("20.0");
+    static TemperatureCheck day = new TemperatureCheck("");
+    static TemperatureCheck time = new TemperatureCheck("");
+    public static Handler handler = new Handler(Looper.getMainLooper());
+    boolean pause = false;
+    Object wait = new Object();
+    Thread threadTemp, threadDate;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,40 +39,57 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                long lastCheck = 0L;
-                while (true) {
-                    if (System.currentTimeMillis() - lastCheck > 4000) {
-                        lastCheck = System.currentTimeMillis();
-                        try {
-                            currentTemp = HeatingSystem.get("currentTemperature");
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    changed();
-                                }
-                            });
-                        } catch (ConnectException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }).start();
 
-        CurrTempTextView tempView = (CurrTempTextView)getView().findViewById(R.id.celciuscurrent);
+
+        getView().findViewById(R.id.relativeLayout5).setOnClickListener(this);
+        getView().findViewById(R.id.relativeLayout6).setOnClickListener(this);
+        getView().findViewById(R.id.relativeLayout7).setOnClickListener(this);
+        getView().findViewById(R.id.daytemp).setOnClickListener(this);
+
+        CurrTempTextView tempView = (CurrTempTextView) getView().findViewById(R.id.celciuscurrent);
         tempView.setText(String.valueOf(t.getValue()));
 
         t.setListener(tempView);
 
-        ((TextView)getView().findViewById(R.id.daytemp)).setText(String.valueOf(((GlobalResources)getActivity().getApplication()).dayTemp));
-        ((TextView)getView().findViewById(R.id.nighttemp)).setText(String.valueOf(((GlobalResources)getActivity().getApplication()).nightTemp));
+        CurrTempTextView dayView = (CurrTempTextView) getView().findViewById(R.id.serverDay);
+        dayView.setText(String.valueOf(day.getValue()));
+
+        day.setListener(dayView);
+
+        CurrTempTextView timeView = (CurrTempTextView) getView().findViewById(R.id.serverTime);
+        timeView.setText(String.valueOf(time.getValue()));
+
+        time.setListener(timeView);
+
+        ((TextView) getView().findViewById(R.id.daytemp)).setText(String.valueOf(((GlobalResources) getActivity().getApplication()).dayTemp));
+        ((TextView) getView().findViewById(R.id.nighttemp)).setText(String.valueOf(((GlobalResources) getActivity().getApplication()).nightTemp));
 
     }
 
-    public void changed(){
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((TextView) getView().findViewById(R.id.daytemp)).setText(String.valueOf(((GlobalResources) getActivity().getApplication()).dayTemp));
+        ((TextView) getView().findViewById(R.id.nighttemp)).setText(String.valueOf(((GlobalResources) getActivity().getApplication()).nightTemp));
+
+        if (((GlobalResources) getActivity().getApplication()).vac)
+            ((TextView) getView().findViewById(R.id.vacationmode)).setText("enabled.");
+        else
+            ((TextView) getView().findViewById(R.id.vacationmode)).setText("disabled.");
+    }
+
+    public static void tempChanged() {
         t.setValue(currentTemp);
+    }
+
+    public static void dateAndTimeChanged() {
+        day.setValue(sDay);
+        time.setValue(sTime);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(getContext(), ConfigurationActivity.class);
+        startActivity(i);
     }
 }

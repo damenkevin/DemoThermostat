@@ -5,13 +5,16 @@ import android.app.Application;
 import java.net.ConnectException;
 import java.util.ArrayList;
 
+import nl.tue.demothermostat.HomeFragment;
+
 /**
  * Created by gsmet on 23-Jun-17.
  */
 
 public class GlobalResources extends Application {
     private WeekProgram wpg;
-    public double dayTemp = 30.0, nightTemp = 5.0, overrideTemp, vacTemp;
+    public double dayTemp = 30.0, nightTemp = 5.0;
+    public boolean vac = false;
 
     @Override
     public void onCreate() {
@@ -25,10 +28,59 @@ public class GlobalResources extends Application {
             public void run() {
                 try {
                     wpg = HeatingSystem.getWeekProgram();
+                    dayTemp = Double.valueOf(HeatingSystem.get("dayTemperature"));
+                    nightTemp = Double.valueOf(HeatingSystem.get("nightTemperature"));
                 } catch (ConnectException e) {
                     e.printStackTrace();
                 } catch (CorruptWeekProgramException e) {
                     e.printStackTrace();
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                long lastCheck = 0L;
+                while (true) {
+                    if (System.currentTimeMillis() - lastCheck > 4000) {
+                        lastCheck = System.currentTimeMillis();
+                        try {
+                            HomeFragment.currentTemp = HeatingSystem.get("currentTemperature");
+                            HomeFragment.handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    HomeFragment.tempChanged();
+                                }
+                            });
+                        } catch (ConnectException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                long lastCheck = 0L;
+                while (true) {
+                    if (System.currentTimeMillis() - lastCheck > 8000) {
+                        lastCheck = System.currentTimeMillis();
+                        try {
+                            HomeFragment.sDay = HeatingSystem.get("day");
+                            HomeFragment.sTime = HeatingSystem.get("time");
+                            HomeFragment.handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    HomeFragment.dateAndTimeChanged();
+                                }
+                            });
+                        } catch (ConnectException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         }).start();

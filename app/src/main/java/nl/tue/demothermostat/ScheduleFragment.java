@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.thermostatapp.util.GlobalResources;
 import org.thermostatapp.util.HeatingSystem;
@@ -54,28 +55,24 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(new Runnable() {
+                Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         HeatingSystem.setWeekProgram(((GlobalResources) getActivity().getApplication()).getLocalWeekProgram());
                     }
-                }).start();
+                });
+                t.start();
+                try {
+                    t.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
+                Toast.makeText(getContext(), "Week program set!", Toast.LENGTH_SHORT).show();
             }
         });
 
         return myFragmentView;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-    }
-
-    private void setProgram() {
-
     }
 
     @Override

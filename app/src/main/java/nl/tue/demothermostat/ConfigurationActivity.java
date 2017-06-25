@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,9 +21,13 @@ import android.widget.PopupWindow;
 import android.view.ViewGroup.LayoutParams;
 
 import org.thermostatapp.util.GlobalResources;
+import org.thermostatapp.util.HeatingSystem;
+import org.thermostatapp.util.InvalidInputValueException;
+import org.thermostatapp.util.Switch;
 
 public class ConfigurationActivity extends AppCompatActivity implements View.OnClickListener {
     EditText day, night;
+    android.widget.Switch vacSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,9 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
             public void onFocusChange(View v, boolean hasFocus) {
                 EditText e = (EditText) v;
                 if (e.getText().length() != 0) {
+                    if (e.getText().toString().length() > 4)
+                        e.setText(e.getText().toString().substring(0, 4));
+
                     if (Double.parseDouble(e.getText().toString()) > 30.0) {
                         e.setText("30.0");
                     } else if (Double.parseDouble(e.getText().toString()) < 5.0) {
@@ -61,6 +69,9 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
             public void onFocusChange(View v, boolean hasFocus) {
                 EditText e = (EditText) v;
                 if (e.getText().length() != 0) {
+                    if (e.getText().toString().length() >= 4)
+                        e.setText(e.getText().toString().substring(0, 4));
+
                     if (Double.parseDouble(e.getText().toString()) > 30.0) {
                         e.setText("30.0");
                     } else if (Double.parseDouble(e.getText().toString()) < 5.0) {
@@ -69,6 +80,69 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
                 }
             }
         });
+
+        vacSwitch = ((android.widget.Switch) findViewById(R.id.vacSwitch));
+
+        if (((GlobalResources) getApplication()).vac) {
+            vacSwitch.setChecked(true);
+        } else {
+            vacSwitch.setChecked(false);
+        }
+
+        vacSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                HeatingSystem.put("weekProgramState", "off");
+                            } catch (InvalidInputValueException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+
+                    ((GlobalResources) getApplication()).vac = true;
+                } else {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                HeatingSystem.put("weekProgramState", "on");
+                            } catch (InvalidInputValueException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+
+                    ((GlobalResources) getApplication()).vac = false;
+                }
+            }
+        });
+
+        findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ((GlobalResources)getApplication()).getWeekProgramFromServer();
+                    }
+                }).start();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (((GlobalResources) getApplication()).vac) {
+            vacSwitch.setChecked(true);
+        } else {
+            vacSwitch.setChecked(false);
+        }
     }
 
     @Override
@@ -76,22 +150,46 @@ public class ConfigurationActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.linearfocus).requestFocus();
 
         if (v.getId() == R.id.daySet) {
-            ((GlobalResources) getApplication()).dayTemp = Double.valueOf(day.getText().toString());
+            double dayT = Double.parseDouble(day.getText().toString());
+
+            if (dayT > 30.0) dayT = 30.0;
+            else if (dayT < 5.0) dayT = 5.0;
+
+            ((GlobalResources) getApplication()).dayTemp = dayT;
+
+            final double finalDayT = dayT;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        HeatingSystem.put("dayTemperature", String.valueOf(finalDayT));
+                    } catch (InvalidInputValueException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
         } else {
-            ((GlobalResources) getApplication()).nightTemp = Double.valueOf(night.getText().toString());
+            double nightT = Double.parseDouble(night.getText().toString());
+
+            if (nightT > 30.0) nightT = 30.0;
+            else if (nightT < 5.0) nightT = 5.0;
+
+            ((GlobalResources) getApplication()).nightTemp = nightT;
+
+            final double finalNightT = nightT;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        HeatingSystem.put("nightTemperature", String.valueOf(finalNightT));
+                    } catch (InvalidInputValueException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
         }
 
-        if(((GlobalResources) getApplication()).dayTemp > 30.0){
-            ((GlobalResources) getApplication()).dayTemp = 30.0;
-        } else if (((GlobalResources) getApplication()).dayTemp < 5.0){
-            ((GlobalResources) getApplication()).dayTemp = 5.0;
-        }
-
-        if(((GlobalResources) getApplication()).nightTemp > 30.0){
-            ((GlobalResources) getApplication()).nightTemp = 30.0;
-        } else if (((GlobalResources) getApplication()).nightTemp < 5.0){
-            ((GlobalResources) getApplication()).nightTemp = 5.0;
-        }
 
         Toast t = Toast.makeText(getApplicationContext(), "Temperature set", Toast.LENGTH_SHORT);
         t.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 50);
