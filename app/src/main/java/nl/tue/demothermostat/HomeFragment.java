@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
         getView().findViewById(R.id.relativeLayout5).setOnClickListener(this);
-        getView().findViewById(R.id.relativeLayout6).setOnClickListener(this);
+        getView().findViewById(R.id.relativeLayout66).setOnClickListener(this);
         getView().findViewById(R.id.relativeLayout7).setOnClickListener(this);
         getView().findViewById(R.id.daytemp).setOnClickListener(this);
 
