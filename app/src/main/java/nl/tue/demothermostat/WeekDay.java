@@ -36,12 +36,6 @@ public class WeekDay extends AppCompatActivity implements View.OnClickListener, 
 
         selectedDay = (TextView) findViewById(R.id.selectedDay);
 
-        findViewById(R.id.saveDay).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveDayProgram();
-            }
-        });
 
         selectDay();
 
